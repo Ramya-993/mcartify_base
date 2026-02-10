@@ -21,44 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          cache: 'npm'
-          
-      - name: Install dependencies
-        run: npm ci
-        
-      - name: Build Next.js application
-        run: npm run build
-        env:
-          NODE_ENV: production
-          
-      - name: Create deployment package
-        run: |
-          mkdir -p deploy-package
-          cp -r .next deploy-package/
-          cp -r public deploy-package/
-          cp -r src deploy-package/
-          cp package.json deploy-package/
-          cp package-lock.json deploy-package/
-          cp next.config.js deploy-package/ 2>/dev/null || :
-          tar -czf deployment.tar.gz -C deploy-package .
-          
       - name: Deploy to EC2
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USERNAME }}
-          key: ${{ secrets.EC2_SSH_KEY }}
-          source: "deployment.tar.gz"
-          target: "/tmp/"
-          
-      - name: Extract and restart on EC2
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -72,31 +35,17 @@ jobs:
             
             # Set variables
             DEPLOY_PATH="$HOME/mcartify-dev/server"
-            BACKUP_PATH="$HOME/backups/mcartify-dev-$(date +%Y%m%d-%H%M%S)"
             
-            # Create backup directory
-            mkdir -p $HOME/backups
-            
-            # Create backup if directory has content
-            if [ -d "$DEPLOY_PATH" ]; then
-              echo "Creating backup..."
-              cp -r $DEPLOY_PATH $BACKUP_PATH
-            fi
-            
-            # Extract new deployment
-            echo "Extracting deployment package..."
+            # Navigate to deployment path
             cd $DEPLOY_PATH
-            tar -xzf /tmp/deployment.tar.gz
             
-            # Skip npm install - dependencies already exist on server
-            echo "Skipping npm install - using existing dependencies..."
+            # Pull latest changes from GitHub
+            echo "Pulling latest changes from GitHub..."
+            git pull origin main || git pull github main
             
             # Restart the application using PM2
             echo "Restarting application..."
             pm2 restart store --max-memory-restart 750M
-            
-            # Clean up
-            rm -f /tmp/deployment.tar.gz
             
             # Verify deployment
             echo "Verifying deployment..."
@@ -105,10 +54,7 @@ jobs:
             if [ "$PM2_STATUS" -gt "0" ]; then
               echo "✅ Deployment successful! Store is online."
             else
-              echo "❌ Deployment failed! Rolling back..."
-              rm -rf $DEPLOY_PATH/*
-              cp -r $BACKUP_PATH/* $DEPLOY_PATH/
-              pm2 restart store --max-memory-restart 750M
+              echo "❌ Deployment verification failed!"
               exit 1
             fi
             
@@ -125,3 +71,5 @@ jobs:
           else
             echo "❌ Deployment failed!"
           fi
+if: success()
+        run: echo "✅ Deployment completed successfully!"
