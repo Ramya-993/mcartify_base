@@ -85,7 +85,7 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
                                     id="explore-categories-title"
                                     className="text-lg font-(weight:--card-title-weight) text-(color:--primary) md:text-2xl font-(family-name:--font-primary)"
                                 >
-                                    Step Up Your Game
+                                    Explore All Categories
                                 </CardTitle>
                             </CardHeader>
 

@@ -1,8 +1,8 @@
-[data-store-theme="default-Black-Shop-theme1"] {
+[data-store-theme="default-Food Store-theme1"] {
   /* ===== TYPOGRAPHY ===== */
   /* Font Families */
   --font-price: "Space Mono", monospace;
-  --font-sans: "Montserrat", sans-serif;
+  --font-sans: "Quicksand", sans-serif;
   --font-serif: "Playfair Display", serif;
   --font-mono: "Fira Code", monospace;
 
@@ -19,9 +19,9 @@
 
   /* Font Weights */
   --fw-regular: 400;
-  --fw-medium: 600;
-  --fw-semibold: 700;
-  --fw-bold: 900;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
 
   /* Line Heights */
   --lh-tight: 1.2;
@@ -30,27 +30,27 @@
 
   /* ===== COLOR SYSTEM (OKLCH) ===== */
   /* Base Colors */
-  --background: oklch(0.1 0 0);
-  --foreground: oklch(0.95 0 0);
-  --card: oklch(0.1 0 0);
-  --card-foreground: oklch(0.95 0 0);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.1 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.1 0 0);
 
-  /* Primary Colors - Vibrant Orange */
-  --primary: oklch(65% 0.2 40);
-  --primary-hover: oklch(60% 0.22 40);
-  --primary-active: oklch(55% 0.25 40);
-  --primary-foreground: oklch(0.1 0 0);
+  /* Primary Colors - Fresh Green */
+  --primary: oklch(62% 0.138 155);
+  --primary-hover: oklch(58% 0.15 155);
+  --primary-active: oklch(55% 0.16 155);
+  --primary-foreground: oklch(1 0 0);
 
   /* Secondary Colors */
-  --secondary: oklch(20% 0 0);
-  --secondary-hover: oklch(15% 0 0);
-  --secondary-active: oklch(10% 0 0);
-  --secondary-foreground: oklch(0.95 0 0);
+  --secondary: oklch(50% 0.1 40);
+  --secondary-hover: oklch(45% 0.12 40);
+  --secondary-active: oklch(40% 0.14 40);
+  --secondary-foreground: oklch(0.1 0 0);
 
   /* Accent Colors */
   --accent: oklch(75% 0.15 85);
-  --accent-hover: oklch(70% 0.15 85);
-  --accent-active: oklch(65% 0.15 85);
+  --accent-hover: oklch(70% 0.17 85);
+  --accent-active: oklch(65% 0.19 85);
   --accent-foreground: oklch(0.1 0 0);
 
   /* Semantic Colors */
@@ -63,9 +63,9 @@
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  --spacing-2xl: 4rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
 
   /* ===== BORDERS & RADII ===== */
   --radius-sm: 0.25rem;
@@ -74,58 +74,58 @@
   --radius-xl: 1rem;
 
   /* ===== SHADOWS ===== */
-  --shadow-sm: 0px 2px 4px -1px hsl(0 0% 0% / 0.1);
+  --shadow-sm: 0px 4px 8px -1px hsl(0 0% 0% / 0.1);
   --shadow-md: 0px 4px 8px -1px hsl(0 0% 0% / 0.1);
-  --shadow-lg: 0px 8px 16px -1px hsl(0 0% 0% / 0.1);
-  --shadow-xl: 0px 12px 24px -1px hsl(0 0% 0% / 0.1);
-  --shadow-2xl: 0px 16px 32px -1px hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0px 4px 8px -1px hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.1);
+  --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.1);
 
   /* ===== COMPONENT-SPECIFIC VARIABLES ===== */
   
   /* Hero Component */
-  --hero-section-padding-y: var(--spacing-xl);
+  --hero-section-padding-y: 2rem;
   --hero-title-size: var(--fs-4xl);
   --hero-title-weight: var(--fw-bold);
   --hero-subtitle-size: var(--fs-xl);
-  --hero-button-padding: var(--spacing-sm) var(--spacing-lg);
+  --hero-button-padding: 1rem 2rem;
   
   /* Featured Categories */
-  --featured-section-padding-y: var(--spacing-xl);
+  --featured-section-padding-y: 3rem;
   --featured-title-size: var(--fs-3xl);
   --featured-title-weight: var(--fw-bold);
-  --featured-grid-gap: var(--spacing-md);
+  --featured-grid-gap: 1.5rem;
   
   /* Explore Categories */
-  --section-padding-y: var(--spacing-lg);
+  --section-padding-y: 2.5rem;
   --section-bg: var(--background);
   --card-radius: var(--radius-lg);
-  --card-title-weight: var(--fw-semibold);
+  --card-title-weight: var(--fw-bold);
   
   /* Top Selling Products */
-  --top-selling-section-padding-y: var(--spacing-xl);
+  --top-selling-section-padding-y: 3rem;
   --top-selling-section-bg: var(--background);
   --top-selling-card-shadow: var(--shadow-md);
   --top-selling-card-radius: var(--radius-lg);
   
   /* Custom Section */
-  --custom-section-padding-y: var(--spacing-lg);
+  --custom-section-padding-y: 2rem;
   --custom-section-bg: var(--background);
   --custom-section-title-size: var(--fs-2xl);
-  --custom-section-title-weight: var(--fw-bold);
+  --custom-section-title-weight: var(--fw-semibold);
   
   /* Footer */
   --footer-bg: var(--foreground);
   --footer-text: oklch(0.9 0 0);
   --footer-border: var(--border);
   --footer-border-width: 1px;
-  --footer-padding-y: var(--spacing-xl);
+  --footer-padding-y: 3rem;
   --footer-logo-height: 3rem;
   --footer-heading-size: var(--fs-lg);
   --footer-heading-weight: var(--fw-semibold);
-  --footer-heading-color: var(--primary);
+  --footer-heading-color: oklch(1 0 0);
   --footer-link-color: oklch(0.8 0 0);
   --footer-link-hover-color: var(--primary);
-  --footer-grid-gap: var(--spacing-lg);
+  --footer-grid-gap: 2rem;
   --footer-separator-color: oklch(0.3 0 0);
   --footer-copyright-color: oklch(0.7 0 0);
   
@@ -147,4 +147,20 @@
   --product-title-size: var(--fs-base);
   --product-price-size: var(--fs-lg);
   --product-price-weight: var(--fw-bold);
+  
+  /* Additional Component Variables */
+  --button-padding: 0.5rem 1rem;
+  --button-radius: var(--radius-md);
+  --button-shadow: var(--shadow-sm);
+  --button-hover-shadow: var(--shadow-md);
+  --input-padding: 0.5rem;
+  --input-border-radius: var(--radius-sm);
+  --input-border-color: oklch(0.5 0 0);
+  --input-focus-border-color: var(--primary);
+  --input-shadow: var(--shadow-sm);
+  --input-hover-shadow: var(--shadow-md);
+  
+  /* Transition Timings */
+  --transition-duration: 300ms;
+  --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
 }

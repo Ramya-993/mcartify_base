@@ -9,8 +9,8 @@ import { Button } from "@/components/ui/button";
 import type { CustomSectionViewProps, CustomSectionImage } from "../components/CustomSection";
 
 const CustomSectionView: React.FC<CustomSectionViewProps> = ({
-    title = "Bold Choices Await",
-    sub_title = "Discover the best in black fashion",
+    title = "Step Up Your Game",
+    sub_title = "Discover bold styles that elevate your look",
     images,
     layouts,
 }) => {
@@ -23,7 +23,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
             if (gridRef.current) {
                 const containerWidth = gridRef.current.offsetWidth;
                 const newRowHeight = (containerWidth / 12) * 0.5;
-                setRowHeight(Math.max(newRowHeight, 40)); // Minimum row height
+                setRowHeight(Math.max(newRowHeight, 40));
             }
         };
 

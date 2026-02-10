@@ -10,7 +10,7 @@ import CategoryCard from "../components/CategoryCard";
 import type { FeaturedCategoriesViewProps } from "../components/FeaturedCategories";
 
 const FeaturedCategoriesView: React.FC<FeaturedCategoriesViewProps> = ({
-    title = "Bold Styles for Every Occasion",
+    title = "Bold Choices Await",
     displayedCategories,
     gridCols = "sm:grid-cols-3",
 }) => {
@@ -62,7 +62,7 @@ const FeaturedCategoriesView: React.FC<FeaturedCategoriesViewProps> = ({
                 {/* View All Button at Bottom Center */}
                 <div className="flex justify-center mt-10">
                     <Link href="/categories" aria-label="View all product categories">
-                        <button className="px-8 py-2 border border-black text-black bg-white rounded-md font-bold text-base hover:bg-gray-100 transition-colors shadow-sm">
+                        <button className="px-8 py-2 border border-black text-black bg-white rounded-md font-bold text-base hover:bg-gray-200 transition-colors shadow-sm">
                             View All
                         </button>
                     </Link>

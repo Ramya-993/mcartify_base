@@ -6,11 +6,11 @@ import type { HeroProps } from "../components/Hero";
 
 const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
     const {
-        title = "Step Into Style",
-        subtitle = "Unleash Your Boldness with Our Collection",
+        title = "Unleash Your Style",
+        subtitle = "Bold Fashion for the Fearless",
         button_text = "Shop Now",
         button_link = "/products",
-        background_image = "https://images.pexels.com/photos/1005638/pexels-photo-1005638.jpeg",
+        background_image = "https://images.pexels.com/photos/1234567/pexels-photo-1234567.jpeg",
     } = config;
 
     return (
@@ -30,10 +30,10 @@ const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
 
             {/* Fade effect at the bottom */}
             <div
-                className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/50 to-transparent z-20"
+                className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black via-black/50 to-transparent z-20"
                 style={{
                     background:
-                        "linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%)",
+                        "linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%)",
                 }}
             ></div>
 
