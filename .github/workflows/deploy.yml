@@ -69,36 +69,14 @@ jobs:
             DEPLOY_PATH="/var/www/store-dev"
             BACKUP_PATH="/var/www/backups/store-dev-$(date +%Y%m%d-%H%M%S)"
             
-            # Check and install Node.js if not installed
-            if ! command -v node &> /dev/null; then
-              echo "Installing Node.js..."
-              curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-              sudo apt-get install -y nodejs
-            fi
-            
-            # Check and install PM2 if not installed
-            if ! command -v pm2 &> /dev/null; then
-              echo "Installing PM2..."
-              sudo npm install -g pm2
-            fi
-            
-            # Create directories with proper permissions
-            echo "Setting up directories..."
+            # Ensure directories exist with proper permissions
             sudo mkdir -p /var/www/store-dev
             sudo mkdir -p /var/www/backups
             sudo chown -R $USER:$USER /var/www
             
-            # Clone repository if not exists
-            if [ ! -d "$DEPLOY_PATH/.git" ]; then
-              echo "Cloning repository..."
-              cd $DEPLOY_PATH
-              git clone https://github.com/Ramya-993/mcartify_base.git .
-            fi
-            
-            # Create backup if directory exists and has files
-            if [ -d "$DEPLOY_PATH" ] && [ "$(ls -A $DEPLOY_PATH 2>/dev/null)" ]; then
+            # Create backup if directory has content
+            if [ -d "$DEPLOY_PATH/.next" ]; then
               echo "Creating backup..."
-              mkdir -p /var/www/backups
               cp -r $DEPLOY_PATH $BACKUP_PATH
             fi
             
