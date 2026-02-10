@@ -21,7 +21,39 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Deploy to EC2
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build Next.js application
+        run: npm run build
+        env:
+          NODE_ENV: production
+          
+      - name: Create lean deployment package
+        run: |
+          # Only package what's needed: .next build output and package.json
+          tar -czf deployment.tar.gz .next package.json package-lock.json
+          ls -lh deployment.tar.gz
+          
+      - name: Copy build to EC2
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          source: "deployment.tar.gz"
+          target: "/tmp/"
+          
+      - name: Extract and restart on EC2
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -36,12 +68,11 @@ jobs:
             # Set variables
             DEPLOY_PATH="$HOME/mcartify-dev/server"
             
-            # Navigate to deployment path
+            # Extract new build (only .next and package files)
+            echo "Extracting build..."
             cd $DEPLOY_PATH
-            
-            # Pull latest changes from GitHub
-            echo "Pulling latest changes from GitHub..."
-            git pull origin main || git pull github main
+            tar -xzf /tmp/deployment.tar.gz
+            rm -f /tmp/deployment.tar.gz
             
             # Restart the application using PM2
             echo "Restarting application..."
