@@ -88,9 +88,8 @@ jobs:
             cd $DEPLOY_PATH
             tar -xzf /tmp/deployment.tar.gz
             
-            # Install dependencies (only production)
-            echo "Installing production dependencies..."
-            npm ci --only=production || npm install --production
+            # Skip npm install - dependencies already exist on server
+            echo "Skipping npm install - using existing dependencies..."
             
             # Restart the application using PM2
             echo "Restarting application..."
