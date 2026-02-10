@@ -9,8 +9,8 @@ import { Button } from "@/components/ui/button";
 import type { CustomSectionViewProps, CustomSectionImage } from "../components/CustomSection";
 
 const CustomSectionView: React.FC<CustomSectionViewProps> = ({
-    title = "Welcome to Our Pink Store",
-    sub_title = "Explore our delightful collection",
+    title = "Welcome to the Purple Store",
+    sub_title = "Discover a world of playful products",
     images,
     layouts,
 }) => {

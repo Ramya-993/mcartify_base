@@ -1,4 +1,4 @@
-[data-store-theme="default-Pink-Store-theme1"] {
+[data-store-theme="default-Purple-Store-theme1"] {
   /* ===== TYPOGRAPHY ===== */
   /* Font Families */
   --font-price: "Space Mono", monospace;
@@ -35,29 +35,27 @@
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.1 0 0);
 
-  /* Primary Colors - Playful Pink */
-  --primary: oklch(85% 0.15 330);            /* Soft Pink */
-  --primary-hover: oklch(80% 0.18 330);      /* Deeper Pink */
-  --primary-active: oklch(75% 0.2 330);      /* Darker Pink */
-  --primary-foreground: oklch(1 0 0);
+  /* Primary Colors - Playful Purple */
+  --primary: oklch(60% 0.2 270);              /* Soft Purple */
+  --primary-hover: oklch(55% 0.22 270);       /* Deeper Purple */
+  --primary-active: oklch(50% 0.25 270);      /* Dark Purple */
+  --primary-foreground: oklch(1 0 0);         /* White */
 
   /* Secondary Colors */
-  --secondary: oklch(70% 0.1 40);             /* Warm Coral */
-  --secondary-hover: oklch(65% 0.12 40);      /* Darker Coral */
-  --secondary-active: oklch(60% 0.15 40);     /* Deeper Coral */
-  --secondary-foreground: oklch(0.1 0 0);
+  --secondary: oklch(40% 0.1 240);             /* Calm Blue */
+  --secondary-hover: oklch(35% 0.12 240);      /* Darker Blue */
+  --secondary-active: oklch(30% 0.15 240);     /* Deep Blue */
+  --secondary-foreground: oklch(0.1 0 0);      /* White */
 
   /* Accent Colors */
-  --accent: oklch(95% 0.05 85);               /* Light Champagne */
-  --accent-hover: oklch(90% 0.07 85);         /* Deeper Champagne */
-  --accent-active: oklch(85% 0.1 85);          /* Rich Champagne */
-  --accent-foreground: oklch(0.1 0 0);
+  --accent: oklch(75% 0.15 85);                /* Bright Yellow */
+  --accent-hover: oklch(70% 0.17 85);          /* Darker Yellow */
 
   /* Semantic Colors */
-  --success: oklch(0.65 0.2 162);
-  --warning: oklch(0.8 0.2 80);
-  --error: oklch(0.65 0.24 7.17);
-  --info: oklch(0.6 0.2 250);
+  --success: oklch(0.65 0.2 162);              /* Success Green */
+  --warning: oklch(0.8 0.2 80);                /* Warning Orange */
+  --error: oklch(0.65 0.24 7.17);              /* Error Red */
+  --info: oklch(0.6 0.2 250);                  /* Info Blue */
 
   /* ===== SPACING ===== */
   --spacing-xs: 0.25rem;
@@ -74,11 +72,11 @@
   --radius-xl: 1rem;
 
   /* ===== SHADOWS ===== */
-  --shadow-sm: 0px 4px 8px -1px hsl(0 0% 0% / 0.1);
+  --shadow-sm: 0px 2px 4px -1px hsl(0 0% 0% / 0.1);
   --shadow-md: 0px 4px 8px -1px hsl(0 0% 0% / 0.1);
-  --shadow-lg: 0px 4px 8px -1px hsl(0 0% 0% / 0.1);
-  --shadow-xl: 0px 8px 16px -1px hsl(0 0% 0% / 0.2);
-  --shadow-2xl: 0px 12px 24px -1px hsl(0 0% 0% / 0.3);
+  --shadow-lg: 0px 6px 12px -1px hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0px 8px 16px -1px hsl(0 0% 0% / 0.1);
+  --shadow-2xl: 0px 10px 20px -1px hsl(0 0% 0% / 0.1);
 
   /* ===== COMPONENT-SPECIFIC VARIABLES ===== */
   
@@ -122,7 +120,7 @@
   --footer-logo-height: 3rem;
   --footer-heading-size: var(--fs-lg);
   --footer-heading-weight: var(--fw-semibold);
-  --footer-heading-color: oklch(1 0 0);
+  --footer-heading-color: var(--primary);
   --footer-link-color: oklch(0.8 0 0);
   --footer-link-hover-color: var(--primary);
   --footer-grid-gap: 2rem;

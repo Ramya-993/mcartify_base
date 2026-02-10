@@ -10,7 +10,7 @@ import { topSellingAnimationVariants } from "@/types/components";
 import type { TopSellingProductsViewProps } from "../components/TopSellingProducts";
 
 const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
-    title = "Welcome to Our Pink Store",
+    title = "Welcome to the Purple Store",
     loading,
     error,
     layout = "carousel",
@@ -25,9 +25,9 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
 }) => {
     if (error) {
         return (
-            <section className="py-8 bg-(color:--pink-light)">
+            <section className="py-8 bg-(color:--purple-bg)">
                 <div className="container mx-auto px-4">
-                    <Card className="border-none shadow-(--pink-card-shadow) rounded-(--pink-card-radius) bg-(color:--pink-card-bg) p-8 text-center">
+                    <Card className="border-none shadow-(--purple-card-shadow) rounded-(--purple-card-radius) bg-(color:--purple-card-bg) p-8 text-center">
                         <CardTitle className="text-lg text-(color:--destructive) mb-2">
                             Error Loading Products
                         </CardTitle>
@@ -52,6 +52,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                     variants={topSellingAnimationVariants.container}
                 >
                     <motion.div variants={topSellingAnimationVariants.card}>
+                        {/* Section Title */}
                         <h2
                             id="top-selling-title"
                             className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900"
@@ -127,6 +128,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                                     </motion.div>
                                                 </AnimatePresence>
 
+                                                {/* Navigation Arrows */}
                                                 {showArrows && totalSlides > 1 && (
                                                     <>
                                                         <Button
@@ -170,6 +172,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                             </div>
                                         )}
 
+                                        {/* Dots Navigation */}
                                         {layout === "carousel" && showDots && totalSlides > 1 && (
                                             <div className="flex justify-center items-center mt-6 gap-2">
                                                 {Array.from({ length: totalSlides }).map((_, index) => (
@@ -189,12 +192,13 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                 )}
                             </CardContent>
                         </Card>
+                        {/* View All Button */}
                         <div className="flex justify-center mt-8">
                             <Link
                                 href="/products"
                                 aria-label="View all best selling products cursor-pointer"
                             >
-                                <button className="px-8 py-2 border cursor-pointer border-pink-500 text-pink-600 bg-white rounded-md font-medium text-base hover:bg-pink-50 transition-colors shadow-sm">
+                                <button className="px-8 py-2 border cursor-pointer border-yellow-500 text-yellow-600 bg-white rounded-md font-medium text-base hover:bg-yellow-50 transition-colors shadow-sm">
                                     View All
                                 </button>
                             </Link>

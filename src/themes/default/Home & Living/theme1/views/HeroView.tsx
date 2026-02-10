@@ -6,11 +6,11 @@ import type { HeroProps } from "../components/Hero";
 
 const HeroView: React.FC<HeroProps> = ({ config = {} }) => {
     const {
-        title = "Welcome to Our Pink Store",
-        subtitle = "Discover playful products that brighten your day",
+        title = "Welcome to the Purple Store",
+        subtitle = "Discover playful products that bring joy",
         button_text = "Start Shopping",
         button_link = "/products",
-        background_image = "https://images.pexels.com/photos/1231234/pexels-photo-1231234.jpeg",
+        background_image = "https://images.pexels.com/photos/1005638/pexels-photo-1005638.jpeg",
     } = config;
 
     return (
