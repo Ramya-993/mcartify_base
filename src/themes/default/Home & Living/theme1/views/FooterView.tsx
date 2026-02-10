@@ -20,189 +20,8 @@ import type {
     FooterMenuItem,
 } from "../components/Footer";
 
-export interface FooterViewProps {
-    name: string;
-    image: string;
-    year: number;
-    store: StoreFooter;
-    socials: Social[];
-}
-
-// Social links section component
-const SocialLinks = memo(({ socials }: { socials: Social[] }) => {
-    // Animation variants for social icons
-    const containerVariants = useMemo(
-        () => ({
-            hidden: { opacity: 0 },
-            visible: {
-                opacity: 1,
-                transition: {
-                    staggerChildren: 0.1,
-                    delayChildren: 0.2,
-                },
-            },
-        }),
-        []
-    );
-
-    const itemVariants = useMemo(
-        () => ({
-            hidden: { scale: 0.8, opacity: 0 },
-            visible: {
-                scale: 1,
-                opacity: 1,
-                transition: {
-                    type: "spring" as const,
-                    stiffness: 100,
-                    damping: 15,
-                },
-            },
-            hover: { scale: 1.1 },
-        }),
-        []
-    );
-
-    // Filter out duplicates and limit to maximum 5 icons
-    const uniqueSocials = socials
-        .filter(
-            (item, index, self) =>
-                index === self.findIndex((t) => t.href === item.href)
-        )
-        .slice(0, 5);
-
-    return (
-        <motion.div
-            className="grid grid-cols-4 gap-3 sm:grid-cols-5 sm:gap-4 w-full max-w-xs"
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
-            aria-label="Social media links"
-        >
-            {uniqueSocials.map((item: Social, i: number) => (
-                <motion.div key={i} variants={itemVariants} whileHover="hover">
-                    <Link href={item.href} aria-label={`Follow us on ${item.name}`}>
-                        {item.icon && (
-                            <Image
-                                src={item.icon}
-                                width={24}
-                                height={24}
-                                alt={`${item.name} icon`}
-                                className="transition-transform hover:scale-110"
-                            />
-                        )}
-                    </Link>
-                </motion.div>
-            ))}
-        </motion.div>
-    );
-});
-SocialLinks.displayName = "SocialLinks";
-
-// Footer sections component
-const FooterSections = memo(({ store }: { store: StoreFooter }) => {
-    const sectionVariants = useMemo(
-        () => ({
-            hidden: { opacity: 0 },
-            visible: {
-                opacity: 1,
-                transition: {
-                    staggerChildren: 0.1,
-                    delayChildren: 0.1,
-                },
-            },
-        }),
-        []
-    );
-
-    const itemVariants = useMemo(
-        () => ({
-            hidden: { x: -10, opacity: 0 },
-            visible: {
-                x: 0,
-                opacity: 1,
-                transition: {
-                    type: "spring" as const,
-                    stiffness: 100,
-                    damping: 15,
-                },
-            },
-        }),
-        []
-    );
-
-    const linkVariants = useMemo(
-        () => ({
-            hidden: { opacity: 0 },
-            visible: {
-                opacity: 1,
-                transition: {
-                    staggerChildren: 0.05,
-                },
-            },
-        }),
-        []
-    );
-
-    const linkItemVariants = useMemo(
-        () => ({
-            hidden: { x: -5, opacity: 0 },
-            visible: {
-                x: 0,
-                opacity: 1,
-            },
-            hover: { x: 5 },
-        }),
-        []
-    );
-
-    return (
-        <motion.div
-            className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-(size:--footer-grid-gap) sm:grid-cols-2 md:grid-cols-4"
-            initial="hidden"
-            animate="visible"
-            variants={sectionVariants}
-        >
-            {store?.footerSections
-                ?.filter((section: FooterSection) => section.sectionName !== "Social Media")
-                .map((footerMenu: FooterSection, i: number) => (
-                    <motion.div key={i} variants={itemVariants}>
-                        <h3 className="mb-(spacing:--footer-heading-margin) text-(size:--footer-heading-size) font-(weight:--footer-heading-weight) tracking-tight text-(color:--footer-heading-color) font-(family-name:--font-secondary)">
-                            {footerMenu?.sectionName}
-                        </h3>
-                        <motion.nav
-                            className="flex flex-col space-y-(spacing:--footer-link-spacing)"
-                            variants={linkVariants}
-                            aria-label={`${footerMenu.sectionName} navigation`}
-                        >
-                            {footerMenu.sectionItems.map(
-                                (sectionItem: FooterMenuItem, ind: number) => (
-                                    <motion.div
-                                        key={ind}
-                                        variants={linkItemVariants}
-                                        whileHover="hover"
-                                    >
-                                        <Button
-                                            variant="link"
-                                            className="text-xs sm:text-sm text-(color:--footer-link-color) hover:text-(color:--footer-link-hover-color) transition-colors justify-start font-(family-name:--font-primary) p-0 h-auto"
-                                        >
-                                            <Link href={sectionItem.path}>
-                                                {sectionItem.itemName}
-                                            </Link>
-                                        </Button>
-                                    </motion.div>
-                                )
-                            )}
-                        </motion.nav>
-                    </motion.div>
-                ))}
-        </motion.div>
-    );
-});
-FooterSections.displayName = "FooterSections";
-
 const FooterView: React.FC<FooterViewProps> = memo(
-    ({ name, image, year, store, socials }) => {
-        // Main container animation
+    ({ name = "Athletic Store", image = "/logo.png", year = new Date().getFullYear(), store, socials }) => {
         const containerVariants = useMemo(
             () => ({
                 hidden: { opacity: 0 },
@@ -235,7 +54,7 @@ const FooterView: React.FC<FooterViewProps> = memo(
 
         return (
             <footer
-                className="border flex justify-center border-solid border-(color:--footer-border) border-t-width-(size:--footer-border-width) bg-(color:--footer-bg) text-(color:--footer-text) mt-8 sm:mt-10"
+                className="border flex justify-center border-solid border-(color:--footer-border) border-t-width-(size:--footer-border-width) bg-(color:--primary) text-(color:--foreground) mt-8 sm:mt-10"
                 aria-labelledby="footer-heading"
                 role="contentinfo"
             >
@@ -265,13 +84,12 @@ const FooterView: React.FC<FooterViewProps> = memo(
                                             className="h-12 sm:h-(size:--footer-logo-height) w-auto rounded-(radius:--radius-md)"
                                             priority
                                         />
-                                        <span className="text-lg bg-transparent hover:bg-transparent sm:text-xl font-(weight:--font-bold) text-(color:--footer-logo-text) font-(family-name:--font-secondary)">
+                                        <span className="text-lg bg-transparent hover:bg-transparent sm:text-xl font-(weight:--font-bold) text-(color:--foreground)">
                                             {name}
                                         </span>
                                     </Link>
-
-                                    <CardDescription className="mt-2 text-sm sm:text-base text-(color:--footer-description-color) font-(family-name:--font-primary) wrap-anywhere">
-                                        {store?.logoDescription || ""}
+                                    <CardDescription className="mt-2 text-sm sm:text-base text-(color:--foreground) font-(family-name:--font-primary) wrap-anywhere">
+                                        Step Up Your Game with our athletic gear!
                                     </CardDescription>
                                     <div className="mt-6">
                                         <SocialLinks socials={socials || []} />
@@ -298,7 +116,7 @@ const FooterView: React.FC<FooterViewProps> = memo(
                             className="flex flex-col gap-2 md:flex-row md:items-center md:gap-4"
                             variants={sectionVariants}
                         >
-                            <p className="text-xs sm:text-sm text-(color:--footer-copyright-color) font-(family-name:--font-primary) text-center md:text-left">
+                            <p className="text-xs sm:text-sm text-(color:--foreground) font-(family-name:--font-primary) text-center md:text-left">
                                 Copyright {year} {name}. All rights reserved.
                             </p>
                         </motion.div>
@@ -307,7 +125,7 @@ const FooterView: React.FC<FooterViewProps> = memo(
                             className="flex items-center justify-center"
                             variants={sectionVariants}
                         >
-                            <p className="text-xs sm:text-sm text-(color:--footer-copyright-color) font-(family-name:--font-primary) flex items-center gap-1.5 justify-center ">
+                            <p className="text-xs sm:text-sm text-(color:--foreground) font-(family-name:--font-primary) flex items-center gap-1.5 justify-center ">
                                 Powered by{" "}
                                 <Link
                                     href="https://www.mcartify.com/"
