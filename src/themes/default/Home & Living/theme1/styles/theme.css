@@ -1,12 +1,22 @@
-[data-store-theme="default-Ecommerce-Red-theme1"] {
-  /* ===== TYPOGRAPHY ===== */
-  /* Font Families */
-  --font-price: "Space Mono", monospace;
-  --font-sans: "Montserrat", sans-serif;
-  --font-serif: "Playfair Display", serif;
+/*
+ * THEME: General E-commerce Store - Modern UI
+ * Comprehensive Component CSS Variables with Tailwind CSS v4 Syntax Support
+ * Updated: October 2023
+ */
+
+[data-store-theme="default-ecommerce-theme1"] {
+
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  /* TYPOGRAPHY SYSTEM */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "Merriweather", serif;
+  --font-price: "Courier New", monospace;
+  --font-sans: "Roboto", sans-serif;
+  --font-serif: "Georgia", serif;
   --font-mono: "Fira Code", monospace;
 
-  /* Font Sizes */
   --fs-xs: 0.75rem;
   --fs-sm: 0.875rem;
   --fs-base: 1rem;
@@ -17,134 +27,326 @@
   --fs-3xl: 2rem;
   --fs-4xl: 2.5rem;
 
-  /* Font Weights */
   --fw-regular: 400;
-  --fw-medium: 600;
-  --fw-semibold: 700;
-  --fw-bold: 900;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
 
-  /* Line Heights */
   --lh-tight: 1.2;
   --lh-normal: 1.5;
   --lh-relaxed: 1.75;
 
-  /* ===== COLOR SYSTEM (OKLCH) ===== */
-  /* Base Colors */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  /* COLOR SYSTEM - OKLCH FORMAT */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  
   --background: oklch(1 0 0);
+  --on-background: oklch(0.26 0.04 240);
   --foreground: oklch(0.1 0 0);
+
   --card: oklch(1 0 0);
+  --on-card: oklch(0.26 0.04 240);
   --card-foreground: oklch(0.1 0 0);
 
-  /* Primary Colors - Vibrant Red */
-  --primary: oklch(60% 0.5 0);
-  --primary-hover: oklch(55% 0.5 0);
-  --primary-active: oklch(50% 0.5 0);
+  --primary: oklch(0.6 0.15 240);
+  --primary-hover: oklch(0.55 0.17 240);
+  --primary-active: oklch(0.52 0.18 240);
+  --on-primary: oklch(1 0 0);
   --primary-foreground: oklch(1 0 0);
 
-  /* Secondary Colors */
-  --secondary: oklch(20% 0 0);
-  --secondary-hover: oklch(15% 0 0);
-  --secondary-active: oklch(10% 0 0);
+  --secondary: oklch(0.95 0 0);
+  --secondary-hover: oklch(0.9 0 0);
+  --secondary-active: oklch(0.85 0 0);
+  --on-secondary: oklch(0.26 0.04 240);
   --secondary-foreground: oklch(0.1 0 0);
 
-  /* Accent Colors */
-  --accent: oklch(75% 0.15 85);
-  --accent-hover: oklch(70% 0.15 85);
-  --accent-active: oklch(65% 0.15 85);
-  --accent-foreground: oklch(0.1 0 0);
+  --muted: oklch(0.7 0 0);
+  --on-muted: oklch(0.26 0.04 240);
+  --muted-foreground: oklch(0.56 0 0);
 
-  /* Semantic Colors */
+  --accent: oklch(0.6 0.05 60);
+  --accent-hover: oklch(0.55 0.07 60);
+  --accent-active: oklch(0.5 0.08 60);
+  --accent-foreground: oklch(1 0 0);
+
+  --destructive: oklch(0.64 0.22 28.81);
+  --destructive-hover: oklch(0.6 0.24 28.81);
+  --destructive-active: oklch(0.56 0.26 28.81);
+  --on-destructive: oklch(1 0 0);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.85 0 0);
+  --on-border: oklch(0.26 0.04 240);
+  --input: oklch(0.91 0 0);
+  --on-input: oklch(0.26 0.04 240);
+  --ring: oklch(0.6 0.15 240);
+  --shadow-color: oklch(0.26 0.04 240);
+
+  --in-stock-text: oklch(0.44 0.15 142.5);
+  --in-stock-bg: oklch(0.97 0.06 142.5);
+  --in-stock-border: oklch(0.85 0.1 142.5);
+  
+  --limited-stock-text: oklch(0.55 0.15 75.31);
+  --limited-stock-bg: oklch(0.97 0.06 75.31);
+  --limited-stock-border: oklch(0.85 0.1 75.31);
+  
+  --very-low-stock-text: oklch(0.55 0.15 45.11);
+  --very-low-stock-bg: oklch(0.97 0.06 45.11);
+  --very-low-stock-border: oklch(0.85 0.1 45.11);
+  
+  --out-of-stock-text: oklch(0.55 0.15 15.5);
+  --out-of-stock-bg: oklch(0.97 0.06 15.5);
+  --out-of-stock-border: oklch(0.85 0.1 15.5);
+
   --success: oklch(0.65 0.2 162);
-  --warning: oklch(0.8 0.2 80);
-  --error: oklch(0.65 0.24 7.17);
-  --info: oklch(0.6 0.2 250);
+  --success-hover: oklch(0.6 0.22 162);
+  --success-active: oklch(0.55 0.24 162);
+  --success-light: oklch(0.9 0.05 162);
+  --on-success: oklch(1 0 0);
 
-  /* ===== SPACING ===== */
+  --warning: oklch(0.8 0.2 80);
+  --warning-hover: oklch(0.75 0.22 80);
+  --warning-active: oklch(0.7 0.24 80);
+  --warning-light: oklch(0.95 0.05 80);
+  --on-warning: oklch(0.1 0 0);
+
+  --error: oklch(0.65 0.24 7.17);
+  --error-hover: oklch(0.6 0.26 7.17);
+  --error-active: oklch(0.55 0.28 7.17);
+  --error-light: oklch(0.9 0.05 15);
+  --on-error: oklch(1 0 0);
+
+  --info: oklch(0.6 0.2 250);
+  --info-hover: oklch(0.55 0.22 250);
+  --info-active: oklch(0.5 0.24 250);
+  --info-light: oklch(0.9 0.05 250);
+  --on-info: oklch(1 0 0);
+
+  --popover: oklch(1 0 0);
+  --on-popover: oklch(0.26 0.04 240);
+  --popover-foreground: oklch(0.1 0 0);
+
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.1 0 0);
+  --sidebar-primary: oklch(0.6 0.15 240);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.6 0.15 240);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.85 0 0);
+  --sidebar-ring: oklch(0.6 0.15 240);
+
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  /* SPACING SYSTEM */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  --spacing-2xl: 4rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
 
-  /* ===== BORDERS & RADII ===== */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  /* Z-INDEX HIERARCHY */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  
+  --z-dropdown: 100;
+  --z-modal: 1000;
+  --z-popover: 50;
+  --z-tooltip: 1000;
+  --z-header: 30;
+  --z-banner: 0;
+  --dropdown-z-index: 9999;
+  --mobile-nav-z-index: 9000;
+  --mobile-category-container-z-index: 10000;
+
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  /* BORDERS & RADII */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 3px;
+
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
+  --radius-full: 9999px;
+  --radius: 0.5rem;
 
-  /* ===== SHADOWS ===== */
-  --shadow-sm: 0px 2px 4px -1px hsl(0 0% 0% / 0.1);
-  --shadow-md: 0px 4px 8px -1px hsl(0 0% 0% / 0.1);
-  --shadow-lg: 0px 8px 16px -1px hsl(0 0% 0% / 0.1);
-  --shadow-xl: 0px 12px 24px -1px hsl(0 0% 0% / 0.1);
-  --shadow-2xl: 0px 16px 32px -1px hsl(0 0% 0% / 0.1);
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  /* SHADOWS */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  
+  --shadow-2xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 1px 2px -2px hsl(0 0% 0% / 0.1);
+  --shadow: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 1px 2px -2px hsl(0 0% 0% / 0.1);
+  --shadow-md: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 2px 4px -2px hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 4px 6px -2px hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 8px 10px -2px hsl(0 0% 0% / 0.1);
+  --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
 
-  /* ===== COMPONENT-SPECIFIC VARIABLES ===== */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  /* TRANSITIONS & ANIMATIONS */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
   
-  /* Hero Component */
-  --hero-section-padding-y: var(--spacing-lg);
-  --hero-title-size: var(--fs-4xl);
-  --hero-title-weight: var(--fw-bold);
-  --hero-subtitle-size: var(--fs-xl);
-  --hero-button-padding: var(--spacing-sm) var(--spacing-md);
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --animation-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --animation-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-spring: cubic-bezier(0.43, 0.13, 0.23, 0.96);
+  --animation-elastic: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+  --animation-fast: 150ms;
+  --animation-normal: 300ms;
+  --animation-slow: 500ms;
+  --animation-extra-slow: 800ms;
+
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  /* LAYOUT - GLOBAL */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
   
-  /* Featured Categories */
-  --featured-section-padding-y: var(--spacing-xl);
-  --featured-title-size: var(--fs-3xl);
-  --featured-title-weight: var(--fw-bold);
-  --featured-grid-gap: var(--spacing-md);
+  --container-max-width: 1280px;
+  --header-height: 72px;
+  --footer-height: 320px;
+
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  /* COMPONENT: BANNER (Hero Banner) */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
   
-  /* Explore Categories */
-  --section-padding-y: var(--spacing-lg);
-  --section-bg: var(--background);
-  --card-radius: var(--radius-lg);
-  --card-title-weight: var(--fw-bold);
+  --banner-height: 300px;
+  --banner-height-md: 500px;
+  --banner-radius: 12px;
+  --banner-content-radius: 8px;
+  --banner-shadow: 0 10px 30px -5px oklch(30% 0.02 240 / 0.2);
+  --banner-container-margin-y: 1.5rem;
+  --banner-skeleton-bg: oklch(93% 0.02 240);
+  --banner-skeleton-element-bg: oklch(88% 0.02 240);
+  --banner-error-padding-y: 2rem;
+  --banner-error-bg: oklch(95% 0.05 30);
+  --banner-error-icon-color: oklch(55% 0.15 30);
+  --banner-error-title-color: oklch(35% 0.1 30);
+  --banner-error-text-color: oklch(45% 0.1 30);
+  --banner-error-button-bg: oklch(55% 0.15 30);
+  --banner-error-button-hover-bg: oklch(50% 0.15 30);
+  --banner-error-button-text: oklch(100% 0 0);
+  --banner-gradient-start: oklch(20% 0.15 240 / 0.7);
+  --banner-gradient-middle: oklch(20% 0.1 240 / 0.5);
+  --banner-gradient-end: transparent;
+  --banner-text-color: oklch(100% 0 0);
+  --banner-title-color: oklch(100% 0 0);
+  --banner-description-color: oklch(90% 0 0 / 0.9);
+  --banner-text-shadow: 0 2px 4px oklch(0% 0 0 / 0.3);
+  --banner-tag-bg: oklch(0.6 0.15 240);
+  --banner-tag-text: oklch(100% 0 0);
+  --banner-button-bg: oklch(100% 0 0);
+  --banner-button-hover-bg: oklch(90% 0.02 240);
+  --banner-button-text: oklch(30% 0.15 240);
+  --banner-button-shadow: 0 4px 10px oklch(0% 0 0 / 0.15);
+  --banner-nav-text: oklch(100% 0 0);
+  --banner-nav-bg: oklch(30% 0.15 240 / 0.4);
+  --banner-nav-hover-bg: oklch(30% 0.15 240 / 0.6);
+  --banner-nav-blur: 4px;
+  --banner-pagination-bg: oklch(70% 0 0);
+  --banner-pagination-active-bg: oklch(0.6 0.15 240);
+  --banner-pagination-bullet-size: 8px;
+  --banner-pagination-bullet-margin: 0 4px;
+  --banner-pagination-bullet-opacity: 0.7;
+  --banner-pagination-bullet-active-opacity: 1;
+  --banner-empty-padding-y: 4rem;
+  --banner-empty-bg: oklch(95% 0.02 240);
+  --banner-empty-border: oklch(85% 0.05 240);
+  --banner-empty-shadow: 0 2px 6px oklch(0% 0 0 / 0.05);
+  --banner-empty-icon-color: oklch(0.6 0.15 240);
+  --banner-empty-title-color: oklch(35% 0.1 240);
+  --banner-empty-text-color: oklch(45% 0.08 240);
+
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  /* COMPONENT: PRODUCT CARD */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
   
-  /* Top Selling Products */
-  --top-selling-section-padding-y: var(--spacing-xl);
-  --top-selling-section-bg: var(--background);
-  --top-selling-card-shadow: var(--shadow-md);
-  --top-selling-card-radius: var(--radius-lg);
+  --product-card-bg: oklch(1 0 0);
+  --product-card-border: oklch(0.85 0 0);
+  --product-card-shadow: 0 4px 8px oklch(0% 0 0 / 0.1);
+  --product-card-radius: 0.5rem;
+  --product-card-padding: 1rem;
+  --product-card-title-color: oklch(0.1 0 0);
+  --product-card-price-color: oklch(0.1 0 0);
+  --product-card-button-bg: oklch(0.6 0.15 240);
+  --product-card-button-hover-bg: oklch(0.55 0.17 240);
+  --product-card-button-text: oklch(1 0 0);
+
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  /* COMPONENT: CATEGORY CARD */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
   
-  /* Custom Section */
-  --custom-section-padding-y: var(--spacing-lg);
-  --custom-section-bg: var(--background);
-  --custom-section-title-size: var(--fs-2xl);
-  --custom-section-title-weight: var(--fw-semibold);
+  --category-card-bg: oklch(1 0 0);
+  --category-card-border: oklch(0.85 0 0);
+  --category-card-shadow: 0 4px 8px oklch(0% 0 0 / 0.1);
+  --category-card-radius: 0.5rem;
+  --category-card-padding: 1rem;
+  --category-card-title-color: oklch(0.1 0 0);
+  --category-card-description-color: oklch(0.26 0.04 240);
+
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  /* COMPONENT: CART */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
   
-  /* Footer */
-  --footer-bg: var(--foreground);
-  --footer-text: oklch(0.9 0 0);
-  --footer-border: var(--border);
-  --footer-border-width: 1px;
-  --footer-padding-y: var(--spacing-xl);
-  --footer-logo-height: 3rem;
-  --footer-heading-size: var(--fs-lg);
-  --footer-heading-weight: var(--fw-semibold);
-  --footer-heading-color: var(--primary);
-  --footer-link-color: oklch(0.8 0 0);
-  --footer-link-hover-color: var(--primary);
-  --footer-grid-gap: var(--spacing-lg);
-  --footer-separator-color: oklch(0.3 0 0);
-  --footer-copyright-color: oklch(0.7 0 0);
+  --cart-bg: oklch(1 0 0);
+  --cart-border: oklch(0.85 0 0);
+  --cart-shadow: 0 4px 8px oklch(0% 0 0 / 0.1);
+  --cart-radius: 0.5rem;
+  --cart-padding: 1rem;
+  --cart-title-color: oklch(0.1 0 0);
+  --cart-price-color: oklch(0.1 0 0);
+  --cart-button-bg: oklch(0.6 0.15 240);
+  --cart-button-hover-bg: oklch(0.55 0.17 240);
+  --cart-button-text: oklch(1 0 0);
+
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  /* COMPONENT: CHECKOUT */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
   
-  /* Category Card */
-  --category-card-transition-duration: 300ms;
-  --category-card-hover-y-translate: -4px;
-  --category-card-image-size-mobile: 80px;
-  --category-card-image-size-desktop: 100px;
-  --category-card-name-font-size-mobile: var(--fs-sm);
-  --category-card-name-font-size-desktop: var(--fs-base);
-  --category-card-image-hover-scale: 1.05;
+  --checkout-bg: oklch(1 0 0);
+  --checkout-border: oklch(0.85 0 0);
+  --checkout-shadow: 0 4px 8px oklch(0% 0 0 / 0.1);
+  --checkout-radius: 0.5rem;
+  --checkout-padding: 1rem;
+  --checkout-title-color: oklch(0.1 0 0);
+  --checkout-price-color: oklch(0.1 0 0);
+  --checkout-button-bg: oklch(0.6 0.15 240);
+  --checkout-button-hover-bg: oklch(0.55 0.17 240);
+  --checkout-button-text: oklch(1 0 0);
+
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  /* COMPONENT: HEADER */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
   
-  /* Product Card */
-  --product-card-bg: var(--card);
-  --product-card-border: var(--border);
-  --product-card-radius: var(--radius-md);
-  --product-card-shadow: var(--shadow-sm);
-  --product-card-hover-shadow: var(--shadow-lg);
-  --product-title-size: var(--fs-base);
-  --product-price-size: var(--fs-lg);
-  --product-price-weight: var(--fw-bold);
+  --header-bg: oklch(1 0 0);
+  --header-border: oklch(0.85 0 0);
+  --header-shadow: 0 4px 8px oklch(0% 0 0 / 0.1);
+  --header-height: 72px;
+  --header-padding: 1rem;
+  --header-title-color: oklch(0.1 0 0);
+  --header-link-color: oklch(0.6 0.15 240);
+  --header-link-hover-color: oklch(0.55 0.17 240);
+
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  /* COMPONENT: FOOTER */
+  /* ═══════════════════════════════════════════════════════════════════════════════ */
+  
+  --footer-bg: oklch(0.1 0 0);
+  --footer-border: oklch(0.85 0 0);
+  --footer-shadow: 0 4px 8px oklch(0% 0 0 / 0.1);
+  --footer-height: 320px;
+  --footer-padding: 1rem;
+  --footer-title-color: oklch(1 0 0);
+  --footer-link-color: oklch(0.6 0.15 240);
+  --footer-link-hover-color: oklch(0.55 0.17 240);
+
+  /* Continue generating variables for other components... */
 }
