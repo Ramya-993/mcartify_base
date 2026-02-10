@@ -97,12 +97,14 @@ jobs:
             pm2 restart store --max-memory-restart 750M
             
             # Clean up
-            rm /tmp/deployment.tar.gz
+            rm -f /tmp/deployment.tar.gz
             
             # Verify deployment
-            sleep 5
-            if pm2 list | grep -q "store.*online"; then
-              echo "✅ Deployment successful!"
+            echo "Verifying deployment..."
+            sleep 3
+            PM2_STATUS=$(pm2 list | grep "store" | grep -c "online" || echo "0")
+            if [ "$PM2_STATUS" -gt "0" ]; then
+              echo "✅ Deployment successful! Store is online."
             else
               echo "❌ Deployment failed! Rolling back..."
               rm -rf $DEPLOY_PATH/*
