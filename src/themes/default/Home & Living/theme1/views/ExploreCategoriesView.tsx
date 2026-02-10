@@ -7,7 +7,7 @@ import type ICategory from "@/types/category";
 import type { ExploreCategoriesViewProps } from "../components/ExploreCategories";
 
 const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
-    categories,
+    categories = [],
     error,
 }) => {
     const containerVariants = useMemo(
@@ -58,7 +58,7 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
                         </CardHeader>
                         <CardContent>
                             <p className="text-(color:--destructive) font-(family-name:--font-primary)">
-                                Error loading categories. Please try again later.
+                                Oops! There was an error loading the categories. Please try again later.
                             </p>
                         </CardContent>
                     </Card>
@@ -85,7 +85,7 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
                                     id="explore-categories-title"
                                     className="text-lg font-(weight:--card-title-weight) text-(color:--primary) md:text-2xl font-(family-name:--font-primary)"
                                 >
-                                    Explore All Categories
+                                    Explore Our Playful Categories
                                 </CardTitle>
                             </CardHeader>
 
@@ -98,7 +98,7 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
                                             aria-live="polite"
                                         >
                                             <p className="mt-4 text-sm text-(color:--muted-foreground) font-(family-name:--font-primary)">
-                                                No categories found
+                                                No categories found. Let's add some fun!
                                             </p>
                                         </div>
                                     ) : (

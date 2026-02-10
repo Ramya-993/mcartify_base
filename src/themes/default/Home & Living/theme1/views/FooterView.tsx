@@ -21,7 +21,7 @@ import type {
 } from "../components/Footer";
 
 const FooterView: React.FC<FooterViewProps> = memo(
-    ({ name = "Athletic Store", image = "/logo.png", year = new Date().getFullYear(), store, socials }) => {
+    ({ name = "Pink Store", image = "/path/to/logo.png", year = new Date().getFullYear(), store, socials }) => {
         const containerVariants = useMemo(
             () => ({
                 hidden: { opacity: 0 },
@@ -54,7 +54,7 @@ const FooterView: React.FC<FooterViewProps> = memo(
 
         return (
             <footer
-                className="border flex justify-center border-solid border-(color:--footer-border) border-t-width-(size:--footer-border-width) bg-(color:--primary) text-(color:--foreground) mt-8 sm:mt-10"
+                className="border flex justify-center border-solid border-(color:--footer-border) border-t-width-(size:--footer-border-width) bg-(color:--footer-bg) text-(color:--footer-text) mt-8 sm:mt-10"
                 aria-labelledby="footer-heading"
                 role="contentinfo"
             >
@@ -84,12 +84,12 @@ const FooterView: React.FC<FooterViewProps> = memo(
                                             className="h-12 sm:h-(size:--footer-logo-height) w-auto rounded-(radius:--radius-md)"
                                             priority
                                         />
-                                        <span className="text-lg bg-transparent hover:bg-transparent sm:text-xl font-(weight:--font-bold) text-(color:--foreground)">
+                                        <span className="text-lg bg-transparent hover:bg-transparent sm:text-xl font-(weight:--font-bold) text-(color:--footer-logo-text) font-(family-name:--font-secondary)">
                                             {name}
                                         </span>
                                     </Link>
-                                    <CardDescription className="mt-2 text-sm sm:text-base text-(color:--foreground) font-(family-name:--font-primary) wrap-anywhere">
-                                        Step Up Your Game with our athletic gear!
+                                    <CardDescription className="mt-2 text-sm sm:text-base text-(color:--footer-description-color) font-(family-name:--font-primary) wrap-anywhere">
+                                        Your playful destination for all things pink!
                                     </CardDescription>
                                     <div className="mt-6">
                                         <SocialLinks socials={socials || []} />
@@ -116,7 +116,7 @@ const FooterView: React.FC<FooterViewProps> = memo(
                             className="flex flex-col gap-2 md:flex-row md:items-center md:gap-4"
                             variants={sectionVariants}
                         >
-                            <p className="text-xs sm:text-sm text-(color:--foreground) font-(family-name:--font-primary) text-center md:text-left">
+                            <p className="text-xs sm:text-sm text-(color:--footer-copyright-color) font-(family-name:--font-primary) text-center md:text-left">
                                 Copyright {year} {name}. All rights reserved.
                             </p>
                         </motion.div>
@@ -125,7 +125,7 @@ const FooterView: React.FC<FooterViewProps> = memo(
                             className="flex items-center justify-center"
                             variants={sectionVariants}
                         >
-                            <p className="text-xs sm:text-sm text-(color:--foreground) font-(family-name:--font-primary) flex items-center gap-1.5 justify-center ">
+                            <p className="text-xs sm:text-sm text-(color:--footer-copyright-color) font-(family-name:--font-primary) flex items-center gap-1.5 justify-center ">
                                 Powered by{" "}
                                 <Link
                                     href="https://www.mcartify.com/"

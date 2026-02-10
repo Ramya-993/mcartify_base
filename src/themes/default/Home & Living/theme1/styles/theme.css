@@ -1,8 +1,8 @@
-[data-store-theme="default-Ecommerce-Red-theme1"] {
+[data-store-theme="default-Pink-Store-theme1"] {
   /* ===== TYPOGRAPHY ===== */
   /* Font Families */
   --font-price: "Space Mono", monospace;
-  --font-sans: "Montserrat", sans-serif;
+  --font-sans: "Quicksand", sans-serif;
   --font-serif: "Playfair Display", serif;
   --font-mono: "Fira Code", monospace;
 
@@ -19,9 +19,9 @@
 
   /* Font Weights */
   --fw-regular: 400;
-  --fw-medium: 600;
-  --fw-semibold: 700;
-  --fw-bold: 900;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
 
   /* Line Heights */
   --lh-tight: 1.2;
@@ -35,22 +35,22 @@
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.1 0 0);
 
-  /* Primary Colors - Vibrant Red */
-  --primary: oklch(60% 0.5 0);
-  --primary-hover: oklch(55% 0.5 0);
-  --primary-active: oklch(50% 0.5 0);
+  /* Primary Colors - Playful Pink */
+  --primary: oklch(85% 0.15 330);            /* Soft Pink */
+  --primary-hover: oklch(80% 0.18 330);      /* Deeper Pink */
+  --primary-active: oklch(75% 0.2 330);      /* Darker Pink */
   --primary-foreground: oklch(1 0 0);
 
   /* Secondary Colors */
-  --secondary: oklch(20% 0 0);
-  --secondary-hover: oklch(15% 0 0);
-  --secondary-active: oklch(10% 0 0);
+  --secondary: oklch(70% 0.1 40);             /* Warm Coral */
+  --secondary-hover: oklch(65% 0.12 40);      /* Darker Coral */
+  --secondary-active: oklch(60% 0.15 40);     /* Deeper Coral */
   --secondary-foreground: oklch(0.1 0 0);
 
   /* Accent Colors */
-  --accent: oklch(75% 0.15 85);
-  --accent-hover: oklch(70% 0.15 85);
-  --accent-active: oklch(65% 0.15 85);
+  --accent: oklch(95% 0.05 85);               /* Light Champagne */
+  --accent-hover: oklch(90% 0.07 85);         /* Deeper Champagne */
+  --accent-active: oklch(85% 0.1 85);          /* Rich Champagne */
   --accent-foreground: oklch(0.1 0 0);
 
   /* Semantic Colors */
@@ -63,9 +63,9 @@
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  --spacing-2xl: 4rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
 
   /* ===== BORDERS & RADII ===== */
   --radius-sm: 0.25rem;
@@ -74,41 +74,41 @@
   --radius-xl: 1rem;
 
   /* ===== SHADOWS ===== */
-  --shadow-sm: 0px 2px 4px -1px hsl(0 0% 0% / 0.1);
+  --shadow-sm: 0px 4px 8px -1px hsl(0 0% 0% / 0.1);
   --shadow-md: 0px 4px 8px -1px hsl(0 0% 0% / 0.1);
-  --shadow-lg: 0px 8px 16px -1px hsl(0 0% 0% / 0.1);
-  --shadow-xl: 0px 12px 24px -1px hsl(0 0% 0% / 0.1);
-  --shadow-2xl: 0px 16px 32px -1px hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0px 4px 8px -1px hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0px 8px 16px -1px hsl(0 0% 0% / 0.2);
+  --shadow-2xl: 0px 12px 24px -1px hsl(0 0% 0% / 0.3);
 
   /* ===== COMPONENT-SPECIFIC VARIABLES ===== */
   
   /* Hero Component */
-  --hero-section-padding-y: var(--spacing-lg);
+  --hero-section-padding-y: 2rem;
   --hero-title-size: var(--fs-4xl);
   --hero-title-weight: var(--fw-bold);
   --hero-subtitle-size: var(--fs-xl);
-  --hero-button-padding: var(--spacing-sm) var(--spacing-md);
+  --hero-button-padding: 1rem 2rem;
   
   /* Featured Categories */
-  --featured-section-padding-y: var(--spacing-xl);
+  --featured-section-padding-y: 3rem;
   --featured-title-size: var(--fs-3xl);
   --featured-title-weight: var(--fw-bold);
-  --featured-grid-gap: var(--spacing-md);
+  --featured-grid-gap: 1.5rem;
   
   /* Explore Categories */
-  --section-padding-y: var(--spacing-lg);
+  --section-padding-y: 2.5rem;
   --section-bg: var(--background);
   --card-radius: var(--radius-lg);
   --card-title-weight: var(--fw-bold);
   
   /* Top Selling Products */
-  --top-selling-section-padding-y: var(--spacing-xl);
+  --top-selling-section-padding-y: 3rem;
   --top-selling-section-bg: var(--background);
   --top-selling-card-shadow: var(--shadow-md);
   --top-selling-card-radius: var(--radius-lg);
   
   /* Custom Section */
-  --custom-section-padding-y: var(--spacing-lg);
+  --custom-section-padding-y: 2rem;
   --custom-section-bg: var(--background);
   --custom-section-title-size: var(--fs-2xl);
   --custom-section-title-weight: var(--fw-semibold);
@@ -118,14 +118,14 @@
   --footer-text: oklch(0.9 0 0);
   --footer-border: var(--border);
   --footer-border-width: 1px;
-  --footer-padding-y: var(--spacing-xl);
+  --footer-padding-y: 3rem;
   --footer-logo-height: 3rem;
   --footer-heading-size: var(--fs-lg);
   --footer-heading-weight: var(--fw-semibold);
-  --footer-heading-color: var(--primary);
+  --footer-heading-color: oklch(1 0 0);
   --footer-link-color: oklch(0.8 0 0);
   --footer-link-hover-color: var(--primary);
-  --footer-grid-gap: var(--spacing-lg);
+  --footer-grid-gap: 2rem;
   --footer-separator-color: oklch(0.3 0 0);
   --footer-copyright-color: oklch(0.7 0 0);
   

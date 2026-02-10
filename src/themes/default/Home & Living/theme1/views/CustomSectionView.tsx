@@ -9,8 +9,8 @@ import { Button } from "@/components/ui/button";
 import type { CustomSectionViewProps, CustomSectionImage } from "../components/CustomSection";
 
 const CustomSectionView: React.FC<CustomSectionViewProps> = ({
-    title = "Step Up Your Game",
-    sub_title = "Discover our bold and energetic collection",
+    title = "Welcome to Our Pink Store",
+    sub_title = "Explore our delightful collection",
     images,
     layouts,
 }) => {
@@ -42,10 +42,10 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
 
         if (hasError) {
             return (
-                <div className="w-full h-full flex items-center justify-center bg-red-200">
+                <div className="w-full h-full flex items-center justify-center bg-gray-200">
                     <div className="text-center">
-                        <div className="text-red-400 text-4xl mb-2">📷</div>
-                        <p className="text-red-500 text-xs">Image not available</p>
+                        <div className="text-gray-400 text-4xl mb-2">📷</div>
+                        <p className="text-gray-500 text-xs">Image not available</p>
                     </div>
                 </div>
             );
@@ -69,7 +69,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                 />
                 {image.text && (
                     <Button
-                        className="absolute left-1/2 -translate-x-1/2 bottom-6 bg-white text-red-900 font-bold px-8 py-3 rounded-none shadow-none text-base"
+                        className="absolute left-1/2 -translate-x-1/2 bottom-6 bg-white text-neutral-900 font-medium px-8 py-3 rounded-none shadow-none text-base"
                         style={{ borderRadius: 0 }}
                     >
                         {image.text}
@@ -84,12 +84,12 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
             {(title || sub_title) && (
                 <div className="mb-6 text-center">
                     {title && (
-                        <h2 className="text-2xl md:text-3xl font-bold mb-2 text-red-900">
+                        <h2 className="text-2xl md:text-3xl font-bold mb-2 text-gray-900">
                             {title}
                         </h2>
                     )}
                     {sub_title && (
-                        <p className="text-lg text-red-600 max-w-2xl mx-auto">
+                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                             {sub_title}
                         </p>
                     )}
@@ -118,7 +118,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                             <div
                                 key={img.id}
                                 data-grid={img.layout}
-                                className="group relative overflow-hidden rounded-lg border border-red-200 bg-red-50 transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+                                className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-50 transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
                                 style={{
                                     width: "100%",
                                     height: "100%",
