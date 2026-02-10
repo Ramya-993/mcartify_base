@@ -1,37 +1,14 @@
-import type { Metadata } from "next";
-import Breadcrumb from "@/components/ui/breadcrumbs";
-import DynamicExploreCategoriesWrapper from "@/components/dynamic/DynamicExploreCategories";
+import { useQuery } from '@tanstack/react-query';
+import { fetchCategories } from '@/lib/api';
+import CategoryGrid from '@/components/home/FeatureCategories';
 
-export const metadata: Metadata = {
-  title: "Product Categories",
-  description:
-    "Browse our wide range of product categories. Find everything you need in one place.",
-  openGraph: {
-    title: "Product Categories",
-    description:
-      "Browse our wide range of product categories. Find everything you need in one place.",
-  },
+const CategoriesPage = () => {
+  const { data: categories, isLoading, error } = useQuery(['categories'], fetchCategories);
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error loading categories</div>;
+
+  return <CategoryGrid categories={categories} />;
 };
 
-const Categories = () => {
-  return (
-    <div>
-      <div className="container max-w-7xl px-4">
-        <Breadcrumb
-          crumbItems={[
-            { href: "/", label: "Home", isCurrent: false, isDisabled: false },
-            {
-              href: "/categories",
-              label: "Categories",
-              isCurrent: true,
-              isDisabled: false,
-            },
-          ]}
-        />
-      </div>
-      <DynamicExploreCategoriesWrapper />
-    </div>
-  );
-};
-
-export default Categories;
+export default CategoriesPage;

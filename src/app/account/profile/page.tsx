@@ -1,0 +1,10 @@
+const ProfilePage = () => {
+  return (
+    <div className="p-4">
+      <h1 className="text-2xl font-bold">Profile</h1>
+      <p className="mt-2">Update your profile information.</p>
+    </div>
+  );
+};
+
+export default ProfilePage;

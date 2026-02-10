@@ -1,18 +1,21 @@
-import DynamicCartWrapper from "@/components/dynamic/DynamicCartWrapper";
-import { Suspense } from "react";
+import { useAppSelector } from '@/lib/store/hooks';
+import CartItem from '@/components/cart/CartItem';
 
-// Loading component for Suspense fallback
-const CartLoading = () => (
-  <div className="flex justify-center items-center h-[60vh]">
-    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-emerald-500"></div>
-  </div>
-);
+const CartPage = () => {
+  const cartItems = useAppSelector((state) => state.cart.items);
 
-export default function CartPage() {
-  console.log("CartPage");
   return (
-    <Suspense fallback={<CartLoading />}>
-      <DynamicCartWrapper />
-    </Suspense>
+    <div className="p-4">
+      <h1 className="text-2xl font-bold">Shopping Cart</h1>
+      <div className="mt-4">
+        {cartItems.length === 0 ? (
+          <p>Your cart is empty.</p>
+        ) : (
+          cartItems.map((item) => <CartItem key={item.id} item={item} />)
+        )}
+      </div>
+    </div>
   );
-}
+};
+
+export default CartPage;
