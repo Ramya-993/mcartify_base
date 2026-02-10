@@ -25,9 +25,9 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
 }) => {
     if (error) {
         return (
-            <section className="py-8 bg-(color:--purple-bg)">
+            <section className="py-8 bg-(color:--primary)">
                 <div className="container mx-auto px-4">
-                    <Card className="border-none shadow-(--purple-card-shadow) rounded-(--purple-card-radius) bg-(color:--purple-card-bg) p-8 text-center">
+                    <Card className="border-none shadow-(--top-selling-card-shadow) rounded-(--top-selling-card-radius) bg-(color:--primary) p-8 text-center">
                         <CardTitle className="text-lg text-(color:--destructive) mb-2">
                             Error Loading Products
                         </CardTitle>
@@ -55,7 +55,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                         {/* Section Title */}
                         <h2
                             id="top-selling-title"
-                            className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900"
+                            className="text-3xl md:text-4xl font-bold text-center mb-8 text-(color:--foreground)"
                         >
                             {title}
                         </h2>

@@ -90,7 +90,7 @@ const FooterView: React.FC<FooterViewProps> = memo(
                                     </Link>
 
                                     <CardDescription className="mt-2 text-sm sm:text-base text-(color:--footer-description-color) font-(family-name:--font-primary) wrap-anywhere">
-                                        Your playful destination for all things purple.
+                                        Your one-stop shop for all things purple!
                                     </CardDescription>
                                     <div className="mt-6">
                                         <SocialLinks socials={socials || []} />

@@ -36,24 +36,26 @@
   --card-foreground: oklch(0.1 0 0);
 
   /* Primary Colors - Playful Purple */
-  --primary: oklch(60% 0.2 270);              /* Soft Purple */
-  --primary-hover: oklch(55% 0.22 270);       /* Deeper Purple */
-  --primary-active: oklch(50% 0.25 270);      /* Dark Purple */
+  --primary: oklch(65% 0.2 270);              /* Playful Purple */
+  --primary-hover: oklch(60% 0.22 270);       /* Darker Purple */
+  --primary-active: oklch(55% 0.24 270);      /* Deep Purple */
   --primary-foreground: oklch(1 0 0);         /* White */
 
   /* Secondary Colors */
-  --secondary: oklch(40% 0.1 240);             /* Calm Blue */
-  --secondary-hover: oklch(35% 0.12 240);      /* Darker Blue */
-  --secondary-active: oklch(30% 0.15 240);     /* Deep Blue */
-  --secondary-foreground: oklch(0.1 0 0);      /* White */
+  --secondary: oklch(50% 0.1 40);             /* Soft Gray */
+  --secondary-hover: oklch(45% 0.1 40);       /* Darker Gray */
+  --secondary-active: oklch(40% 0.1 40);      /* Dark Gray */
+  --secondary-foreground: oklch(0.1 0 0);     /* Black */
 
   /* Accent Colors */
-  --accent: oklch(75% 0.15 85);                /* Bright Yellow */
-  --accent-hover: oklch(70% 0.17 85);          /* Darker Yellow */
+  --accent: oklch(75% 0.15 85);                /* Light Lavender */
+  --accent-hover: oklch(70% 0.15 85);          /* Lavender */
+  --accent-active: oklch(65% 0.15 85);         /* Deep Lavender */
+  --accent-foreground: oklch(0.1 0 0);         /* Black */
 
   /* Semantic Colors */
   --success: oklch(0.65 0.2 162);              /* Success Green */
-  --warning: oklch(0.8 0.2 80);                /* Warning Orange */
+  --warning: oklch(0.8 0.2 80);                /* Warning Yellow */
   --error: oklch(0.65 0.24 7.17);              /* Error Red */
   --info: oklch(0.6 0.2 250);                  /* Info Blue */
 
