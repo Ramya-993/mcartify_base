@@ -66,16 +66,14 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             # Set variables
-            DEPLOY_PATH="/var/www/store-dev"
-            BACKUP_PATH="/var/www/backups/store-dev-$(date +%Y%m%d-%H%M%S)"
+            DEPLOY_PATH="$HOME/mcartify-dev/server"
+            BACKUP_PATH="$HOME/backups/mcartify-dev-$(date +%Y%m%d-%H%M%S)"
             
-            # Ensure directories exist with proper permissions
-            sudo mkdir -p /var/www/store-dev
-            sudo mkdir -p /var/www/backups
-            sudo chown -R $USER:$USER /var/www
+            # Create backup directory
+            mkdir -p $HOME/backups
             
             # Create backup if directory has content
-            if [ -d "$DEPLOY_PATH/.next" ]; then
+            if [ -d "$DEPLOY_PATH" ]; then
               echo "Creating backup..."
               cp -r $DEPLOY_PATH $BACKUP_PATH
             fi
@@ -91,20 +89,20 @@ jobs:
             
             # Restart the application using PM2
             echo "Restarting application..."
-            pm2 restart store-dev || pm2 start npm --name "store-dev" -- start
+            pm2 restart store --max-memory-restart 750M
             
             # Clean up
             rm /tmp/deployment.tar.gz
             
             # Verify deployment
             sleep 5
-            if pm2 list | grep -q "store-dev.*online"; then
+            if pm2 list | grep -q "store.*online"; then
               echo "✅ Deployment successful!"
             else
               echo "❌ Deployment failed! Rolling back..."
               rm -rf $DEPLOY_PATH/*
               cp -r $BACKUP_PATH/* $DEPLOY_PATH/
-              pm2 restart store-dev
+              pm2 restart store --max-memory-restart 750M
               exit 1
             fi
             
