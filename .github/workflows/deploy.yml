@@ -86,11 +86,11 @@ jobs:
             # Verify deployment
             echo "Verifying deployment..."
             sleep 3
-            PM2_STATUS=$(pm2 list | grep "store" | grep -c "online" || echo "0")
-            if [ "$PM2_STATUS" -gt "0" ]; then
+            if pm2 list | grep -q "store.*online"; then
               echo "✅ Deployment successful! Store is online."
             else
               echo "❌ Deployment verification failed!"
+              pm2 list
               exit 1
             fi
             
