@@ -53,12 +53,12 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
                                 id="explore-categories-error-title"
                                 className="text-lg font-(weight:--card-title-weight) text-(color:--primary) md:text-2xl font-(family-name:--font-primary)"
                             >
-                                Explore All Categories
+                                Explore Our Categories
                             </CardTitle>
                         </CardHeader>
                         <CardContent>
                             <p className="text-(color:--destructive) font-(family-name:--font-primary)">
-                                Error loading categories. Please try again later.
+                                Oops! We couldn't load the categories. Please try again later.
                             </p>
                         </CardContent>
                     </Card>
@@ -80,12 +80,12 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
                 >
                     <motion.div variants={cardVariants}>
                         <Card className="border-0 bg-(color:--background)/50 shadow-none rounded-(--card-radius)">
-                            <CardHeader className="flex-row items-center justify-between space-y-0 px-4 pt-4">
+                            <CardHeader>
                                 <CardTitle
                                     id="explore-categories-title"
                                     className="text-lg font-(weight:--card-title-weight) text-(color:--primary) md:text-2xl font-(family-name:--font-primary)"
                                 >
-                                    Explore All Categories
+                                    Explore Our Categories
                                 </CardTitle>
                             </CardHeader>
 
@@ -98,7 +98,7 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
                                             aria-live="polite"
                                         >
                                             <p className="mt-4 text-sm text-(color:--muted-foreground) font-(family-name:--font-primary)">
-                                                No categories found
+                                                No categories found. Check back later!
                                             </p>
                                         </div>
                                     ) : (

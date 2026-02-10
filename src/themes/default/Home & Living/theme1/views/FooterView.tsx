@@ -21,7 +21,7 @@ import type {
 } from "../components/Footer";
 
 const FooterView: React.FC<FooterViewProps> = memo(
-    ({ name = "Black Shop", image = "/logo.png", year = new Date().getFullYear(), store, socials }) => {
+    ({ name = "Purple Shop", image = "/logo.png", year = new Date().getFullYear(), store, socials }) => {
         const containerVariants = useMemo(
             () => ({
                 hidden: { opacity: 0 },
@@ -88,8 +88,9 @@ const FooterView: React.FC<FooterViewProps> = memo(
                                             {name}
                                         </span>
                                     </Link>
+
                                     <CardDescription className="mt-2 text-sm sm:text-base text-(color:--footer-description-color) font-(family-name:--font-primary) wrap-anywhere">
-                                        Bold styles for the energetic shopper.
+                                        Your playful destination for all things purple!
                                     </CardDescription>
                                     <div className="mt-6">
                                         <SocialLinks socials={socials || []} />

@@ -9,8 +9,8 @@ import { Button } from "@/components/ui/button";
 import type { CustomSectionViewProps, CustomSectionImage } from "../components/CustomSection";
 
 const CustomSectionView: React.FC<CustomSectionViewProps> = ({
-    title = "Step Up Your Game",
-    sub_title = "Discover bold styles that elevate your look",
+    title = "Welcome to the Purple Shop",
+    sub_title = "Discover a world of playful elegance",
     images,
     layouts,
 }) => {
@@ -23,7 +23,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
             if (gridRef.current) {
                 const containerWidth = gridRef.current.offsetWidth;
                 const newRowHeight = (containerWidth / 12) * 0.5;
-                setRowHeight(Math.max(newRowHeight, 40));
+                setRowHeight(Math.max(newRowHeight, 40)); // Minimum row height
             }
         };
 
@@ -69,7 +69,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                 />
                 {image.text && (
                     <Button
-                        className="absolute left-1/2 -translate-x-1/2 bottom-6 bg-white text-neutral-900 font-bold px-8 py-3 rounded-none shadow-none text-base"
+                        className="absolute left-1/2 -translate-x-1/2 bottom-6 bg-white text-neutral-900 font-medium px-8 py-3 rounded-none shadow-none text-base"
                         style={{ borderRadius: 0 }}
                     >
                         {image.text}
