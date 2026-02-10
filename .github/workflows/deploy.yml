@@ -1,6 +1,11 @@
 name: Deploy Theme to EC2
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/themes/**'
   workflow_dispatch:
     inputs:
       theme_name:
