@@ -25,9 +25,9 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
 }) => {
     if (error) {
         return (
-            <section className="py-8 bg-(color:--primary)">
+            <section className="py-8 bg-(color:--error-bg)">
                 <div className="container mx-auto px-4">
-                    <Card className="border-none shadow-(--top-selling-card-shadow) rounded-(--top-selling-card-radius) bg-(color:--top-selling-card-bg) p-8 text-center">
+                    <Card className="border-none shadow-(--error-shadow) rounded-(--error-radius) bg-(color:--error-card-bg) p-8 text-center">
                         <CardTitle className="text-lg text-(color:--destructive) mb-2">
                             Error Loading Products
                         </CardTitle>
@@ -54,7 +54,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                     <motion.div variants={topSellingAnimationVariants.card}>
                         <h2
                             id="top-selling-title"
-                            className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900"
+                            className="text-3xl md:text-4xl font-bold text-center mb-8 text-red-600"
                         >
                             {title}
                         </h2>
@@ -99,17 +99,15 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                                                     animate={{ opacity: 1, y: 0 }}
                                                                     transition={{ delay: index * 0.1 }}
                                                                     className="carousel-product-container"
-                                                                    style={
-                                                                        {
-                                                                            "--carousel-scale": "0.85",
-                                                                            "--carousel-height": "auto",
-                                                                            "--image-aspect": "3/4",
-                                                                            "--card-padding": "0.75rem",
-                                                                            "--title-size": "0.875rem",
-                                                                            "--price-size": "1rem",
-                                                                            "--content-spacing": "0.5rem",
-                                                                        } as React.CSSProperties
-                                                                    }
+                                                                    style={{
+                                                                        "--carousel-scale": "0.85",
+                                                                        "--carousel-height": "auto",
+                                                                        "--image-aspect": "3/4",
+                                                                        "--card-padding": "0.75rem",
+                                                                        "--title-size": "0.875rem",
+                                                                        "--price-size": "1rem",
+                                                                        "--content-spacing": "0.5rem",
+                                                                    } as React.CSSProperties}
                                                                 >
                                                                     <div className="transform scale-[0.85] origin-center">
                                                                         <Product product={product} />
@@ -177,7 +175,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                                         key={index}
                                                         onClick={() => onGoToSlide(index)}
                                                         className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === index
-                                                            ? "bg-(color:--primary) scale-125"
+                                                            ? "bg-red-600 scale-125"
                                                             : "bg-gray-300 hover:bg-gray-400"
                                                             }`}
                                                         aria-label={`Go to slide ${index + 1}`}
@@ -194,8 +192,8 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                 href="/products"
                                 aria-label="View all best selling products cursor-pointer"
                             >
-                                <button className="px-8 py-2 border cursor-pointer border-yellow-500 text-yellow-600 bg-white rounded-md font-medium text-base hover:bg-yellow-50 transition-colors shadow-sm">
-                                    Shop Now
+                                <button className="px-8 py-2 border cursor-pointer border-red-600 text-red-600 bg-white rounded-md font-medium text-base hover:bg-red-50 transition-colors shadow-sm">
+                                    View All
                                 </button>
                             </Link>
                         </div>

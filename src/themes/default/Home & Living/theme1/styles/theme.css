@@ -1,4 +1,4 @@
-[data-store-theme="default-Shop-theme1"] {
+[data-store-theme="default-Ecommerce-Red-theme1"] {
   /* ===== TYPOGRAPHY ===== */
   /* Font Families */
   --font-price: "Space Mono", monospace;
@@ -35,22 +35,22 @@
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.1 0 0);
 
-  /* Primary Colors - Vibrant Orange */
-  --primary: oklch(65% 0.2 40);
-  --primary-hover: oklch(60% 0.22 40);
-  --primary-active: oklch(55% 0.24 40);
+  /* Primary Colors - Vibrant Red */
+  --primary: oklch(60% 0.5 0);
+  --primary-hover: oklch(55% 0.5 0);
+  --primary-active: oklch(50% 0.5 0);
   --primary-foreground: oklch(1 0 0);
 
   /* Secondary Colors */
   --secondary: oklch(20% 0 0);
   --secondary-hover: oklch(15% 0 0);
   --secondary-active: oklch(10% 0 0);
-  --secondary-foreground: oklch(0.9 0 0);
+  --secondary-foreground: oklch(0.1 0 0);
 
   /* Accent Colors */
   --accent: oklch(75% 0.15 85);
-  --accent-hover: oklch(70% 0.17 85);
-  --accent-active: oklch(65% 0.2 85);
+  --accent-hover: oklch(70% 0.15 85);
+  --accent-active: oklch(65% 0.15 85);
   --accent-foreground: oklch(0.1 0 0);
 
   /* Semantic Colors */
@@ -83,23 +83,23 @@
   /* ===== COMPONENT-SPECIFIC VARIABLES ===== */
   
   /* Hero Component */
-  --hero-section-padding-y: var(--spacing-xl);
+  --hero-section-padding-y: var(--spacing-lg);
   --hero-title-size: var(--fs-4xl);
   --hero-title-weight: var(--fw-bold);
   --hero-subtitle-size: var(--fs-xl);
-  --hero-button-padding: var(--spacing-sm) var(--spacing-lg);
+  --hero-button-padding: var(--spacing-sm) var(--spacing-md);
   
   /* Featured Categories */
-  --featured-section-padding-y: var(--spacing-2xl);
+  --featured-section-padding-y: var(--spacing-xl);
   --featured-title-size: var(--fs-3xl);
   --featured-title-weight: var(--fw-bold);
-  --featured-grid-gap: var(--spacing-lg);
+  --featured-grid-gap: var(--spacing-md);
   
   /* Explore Categories */
   --section-padding-y: var(--spacing-lg);
   --section-bg: var(--background);
   --card-radius: var(--radius-lg);
-  --card-title-weight: var(--fw-semibold);
+  --card-title-weight: var(--fw-bold);
   
   /* Top Selling Products */
   --top-selling-section-padding-y: var(--spacing-xl);
@@ -109,9 +109,9 @@
   
   /* Custom Section */
   --custom-section-padding-y: var(--spacing-lg);
-  --custom-section-bg: var(--foreground);
+  --custom-section-bg: var(--background);
   --custom-section-title-size: var(--fs-2xl);
-  --custom-section-title-weight: var(--fw-bold);
+  --custom-section-title-weight: var(--fw-semibold);
   
   /* Footer */
   --footer-bg: var(--foreground);
@@ -147,9 +147,4 @@
   --product-title-size: var(--fs-base);
   --product-price-size: var(--fs-lg);
   --product-price-weight: var(--fw-bold);
-  
-  /* Transitions */
-  --transition-fast: 150ms;
-  --transition-medium: 300ms;
-  --transition-slow: 500ms;
 }
