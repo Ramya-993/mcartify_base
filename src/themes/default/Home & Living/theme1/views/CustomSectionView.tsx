@@ -9,8 +9,8 @@ import { Button } from "@/components/ui/button";
 import type { CustomSectionViewProps, CustomSectionImage } from "../components/CustomSection";
 
 const CustomSectionView: React.FC<CustomSectionViewProps> = ({
-    title = "Welcome to the Purple Store",
-    sub_title = "Discover a world of playful products",
+    title = "Bold Choices Await",
+    sub_title = "Discover the best in black fashion",
     images,
     layouts,
 }) => {
@@ -69,7 +69,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                 />
                 {image.text && (
                     <Button
-                        className="absolute left-1/2 -translate-x-1/2 bottom-6 bg-white text-neutral-900 font-medium px-8 py-3 rounded-none shadow-none text-base"
+                        className="absolute left-1/2 -translate-x-1/2 bottom-6 bg-white text-neutral-900 font-bold px-8 py-3 rounded-none shadow-none text-base"
                         style={{ borderRadius: 0 }}
                     >
                         {image.text}

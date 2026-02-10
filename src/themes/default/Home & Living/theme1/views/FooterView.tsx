@@ -21,7 +21,7 @@ import type {
 } from "../components/Footer";
 
 const FooterView: React.FC<FooterViewProps> = memo(
-    ({ name = "Purple Store", image = "/logo.png", year = new Date().getFullYear(), store, socials }) => {
+    ({ name = "Black Shop", image = "/logo.png", year = new Date().getFullYear(), store, socials }) => {
         const containerVariants = useMemo(
             () => ({
                 hidden: { opacity: 0 },
@@ -90,7 +90,7 @@ const FooterView: React.FC<FooterViewProps> = memo(
                                     </Link>
 
                                     <CardDescription className="mt-2 text-sm sm:text-base text-(color:--footer-description-color) font-(family-name:--font-primary) wrap-anywhere">
-                                        Your one-stop shop for all things purple!
+                                        Bold and Athletic Gear for Everyone
                                     </CardDescription>
                                     <div className="mt-6">
                                         <SocialLinks socials={socials || []} />
@@ -129,12 +129,16 @@ const FooterView: React.FC<FooterViewProps> = memo(
                             <p className="text-xs sm:text-sm text-(color:--footer-copyright-color) font-(family-name:--font-primary) flex items-center gap-1.5 justify-center ">
                                 Powered by{" "}
                                 <Link
-                                    href="https://www.purplestore.com/"
+                                    href="https://www.mcartify.com/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center font-(weight:--font-medium) text-(color:--primary) hover:text-(color:--primary-hover) transition-colors gap-1"
                                 >
-                                    purplestore.com
+                                    mcartify.com
+                                    <ExternalLink
+                                        className="h-3 w-3 sm:h-3.5 sm:w-3.5"
+                                        aria-hidden="true"
+                                    />
                                 </Link>
                             </p>
                         </motion.div>

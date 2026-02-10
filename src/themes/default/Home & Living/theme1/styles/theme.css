@@ -1,8 +1,8 @@
-[data-store-theme="default-Purple-Store-theme1"] {
+[data-store-theme="default-Black-Shop-theme1"] {
   /* ===== TYPOGRAPHY ===== */
   /* Font Families */
   --font-price: "Space Mono", monospace;
-  --font-sans: "Quicksand", sans-serif;
+  --font-sans: "Montserrat", sans-serif;
   --font-serif: "Playfair Display", serif;
   --font-mono: "Fira Code", monospace;
 
@@ -19,9 +19,9 @@
 
   /* Font Weights */
   --fw-regular: 400;
-  --fw-medium: 500;
-  --fw-semibold: 600;
-  --fw-bold: 700;
+  --fw-medium: 600;
+  --fw-semibold: 700;
+  --fw-bold: 900;
 
   /* Line Heights */
   --lh-tight: 1.2;
@@ -30,42 +30,42 @@
 
   /* ===== COLOR SYSTEM (OKLCH) ===== */
   /* Base Colors */
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.1 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.1 0 0);
+  --background: oklch(0.1 0 0);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.1 0 0);
+  --card-foreground: oklch(0.95 0 0);
 
-  /* Primary Colors - Playful Purple */
-  --primary: oklch(65% 0.2 270);              /* Playful Purple */
-  --primary-hover: oklch(60% 0.22 270);       /* Darker Purple */
-  --primary-active: oklch(55% 0.24 270);      /* Deep Purple */
-  --primary-foreground: oklch(1 0 0);         /* White */
+  /* Primary Colors - Vibrant Orange */
+  --primary: oklch(65% 0.2 40);
+  --primary-hover: oklch(60% 0.22 40);
+  --primary-active: oklch(55% 0.25 40);
+  --primary-foreground: oklch(0.1 0 0);
 
   /* Secondary Colors */
-  --secondary: oklch(50% 0.1 40);             /* Soft Gray */
-  --secondary-hover: oklch(45% 0.1 40);       /* Darker Gray */
-  --secondary-active: oklch(40% 0.1 40);      /* Dark Gray */
-  --secondary-foreground: oklch(0.1 0 0);     /* Black */
+  --secondary: oklch(20% 0 0);
+  --secondary-hover: oklch(15% 0 0);
+  --secondary-active: oklch(10% 0 0);
+  --secondary-foreground: oklch(0.95 0 0);
 
   /* Accent Colors */
-  --accent: oklch(75% 0.15 85);                /* Light Lavender */
-  --accent-hover: oklch(70% 0.15 85);          /* Lavender */
-  --accent-active: oklch(65% 0.15 85);         /* Deep Lavender */
-  --accent-foreground: oklch(0.1 0 0);         /* Black */
+  --accent: oklch(75% 0.15 85);
+  --accent-hover: oklch(70% 0.15 85);
+  --accent-active: oklch(65% 0.15 85);
+  --accent-foreground: oklch(0.1 0 0);
 
   /* Semantic Colors */
-  --success: oklch(0.65 0.2 162);              /* Success Green */
-  --warning: oklch(0.8 0.2 80);                /* Warning Yellow */
-  --error: oklch(0.65 0.24 7.17);              /* Error Red */
-  --info: oklch(0.6 0.2 250);                  /* Info Blue */
+  --success: oklch(0.65 0.2 162);
+  --warning: oklch(0.8 0.2 80);
+  --error: oklch(0.65 0.24 7.17);
+  --info: oklch(0.6 0.2 250);
 
   /* ===== SPACING ===== */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-2xl: 3rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
 
   /* ===== BORDERS & RADII ===== */
   --radius-sm: 0.25rem;
@@ -76,56 +76,56 @@
   /* ===== SHADOWS ===== */
   --shadow-sm: 0px 2px 4px -1px hsl(0 0% 0% / 0.1);
   --shadow-md: 0px 4px 8px -1px hsl(0 0% 0% / 0.1);
-  --shadow-lg: 0px 6px 12px -1px hsl(0 0% 0% / 0.1);
-  --shadow-xl: 0px 8px 16px -1px hsl(0 0% 0% / 0.1);
-  --shadow-2xl: 0px 10px 20px -1px hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0px 8px 16px -1px hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0px 12px 24px -1px hsl(0 0% 0% / 0.1);
+  --shadow-2xl: 0px 16px 32px -1px hsl(0 0% 0% / 0.1);
 
   /* ===== COMPONENT-SPECIFIC VARIABLES ===== */
   
   /* Hero Component */
-  --hero-section-padding-y: 2rem;
+  --hero-section-padding-y: var(--spacing-xl);
   --hero-title-size: var(--fs-4xl);
   --hero-title-weight: var(--fw-bold);
   --hero-subtitle-size: var(--fs-xl);
-  --hero-button-padding: 1rem 2rem;
+  --hero-button-padding: var(--spacing-sm) var(--spacing-lg);
   
   /* Featured Categories */
-  --featured-section-padding-y: 3rem;
+  --featured-section-padding-y: var(--spacing-xl);
   --featured-title-size: var(--fs-3xl);
   --featured-title-weight: var(--fw-bold);
-  --featured-grid-gap: 1.5rem;
+  --featured-grid-gap: var(--spacing-md);
   
   /* Explore Categories */
-  --section-padding-y: 2.5rem;
+  --section-padding-y: var(--spacing-lg);
   --section-bg: var(--background);
   --card-radius: var(--radius-lg);
-  --card-title-weight: var(--fw-bold);
+  --card-title-weight: var(--fw-semibold);
   
   /* Top Selling Products */
-  --top-selling-section-padding-y: 3rem;
+  --top-selling-section-padding-y: var(--spacing-xl);
   --top-selling-section-bg: var(--background);
   --top-selling-card-shadow: var(--shadow-md);
   --top-selling-card-radius: var(--radius-lg);
   
   /* Custom Section */
-  --custom-section-padding-y: 2rem;
+  --custom-section-padding-y: var(--spacing-lg);
   --custom-section-bg: var(--background);
   --custom-section-title-size: var(--fs-2xl);
-  --custom-section-title-weight: var(--fw-semibold);
+  --custom-section-title-weight: var(--fw-bold);
   
   /* Footer */
   --footer-bg: var(--foreground);
   --footer-text: oklch(0.9 0 0);
   --footer-border: var(--border);
   --footer-border-width: 1px;
-  --footer-padding-y: 3rem;
+  --footer-padding-y: var(--spacing-xl);
   --footer-logo-height: 3rem;
   --footer-heading-size: var(--fs-lg);
   --footer-heading-weight: var(--fw-semibold);
   --footer-heading-color: var(--primary);
   --footer-link-color: oklch(0.8 0 0);
   --footer-link-hover-color: var(--primary);
-  --footer-grid-gap: 2rem;
+  --footer-grid-gap: var(--spacing-lg);
   --footer-separator-color: oklch(0.3 0 0);
   --footer-copyright-color: oklch(0.7 0 0);
   

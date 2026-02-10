@@ -10,7 +10,7 @@ import { topSellingAnimationVariants } from "@/types/components";
 import type { TopSellingProductsViewProps } from "../components/TopSellingProducts";
 
 const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
-    title = "Welcome to the Purple Store",
+    title = "Step Up Your Game",
     loading,
     error,
     layout = "carousel",
@@ -27,7 +27,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
         return (
             <section className="py-8 bg-(color:--primary)">
                 <div className="container mx-auto px-4">
-                    <Card className="border-none shadow-(--top-selling-card-shadow) rounded-(--top-selling-card-radius) bg-(color:--primary) p-8 text-center">
+                    <Card className="border-none shadow-(--top-selling-card-shadow) rounded-(--top-selling-card-radius) bg-(color:--top-selling-card-bg) p-8 text-center">
                         <CardTitle className="text-lg text-(color:--destructive) mb-2">
                             Error Loading Products
                         </CardTitle>
@@ -55,7 +55,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                         {/* Section Title */}
                         <h2
                             id="top-selling-title"
-                            className="text-3xl md:text-4xl font-bold text-center mb-8 text-(color:--foreground)"
+                            className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900"
                         >
                             {title}
                         </h2>
@@ -199,7 +199,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                 aria-label="View all best selling products cursor-pointer"
                             >
                                 <button className="px-8 py-2 border cursor-pointer border-yellow-500 text-yellow-600 bg-white rounded-md font-medium text-base hover:bg-yellow-50 transition-colors shadow-sm">
-                                    View All
+                                    Shop Now
                                 </button>
                             </Link>
                         </div>
