@@ -177,7 +177,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                                         key={index}
                                                         onClick={() => onGoToSlide(index)}
                                                         className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === index
-                                                            ? "bg-primary scale-125"
+                                                            ? "bg-(color:--primary) scale-125"
                                                             : "bg-gray-300 hover:bg-gray-400"
                                                             }`}
                                                         aria-label={`Go to slide ${index + 1}`}
@@ -195,7 +195,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                 aria-label="View all best selling products cursor-pointer"
                             >
                                 <button className="px-8 py-2 border cursor-pointer border-yellow-500 text-yellow-600 bg-white rounded-md font-medium text-base hover:bg-yellow-50 transition-colors shadow-sm">
-                                    View All
+                                    Shop Now
                                 </button>
                             </Link>
                         </div>
