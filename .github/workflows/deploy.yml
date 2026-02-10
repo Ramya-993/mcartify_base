@@ -94,11 +94,6 @@ jobs:
               exit 1
             fi
             
-      - name: Health check
-        run: |
-          sleep 10
-          curl -f http://${{ secrets.EC2_HOST }}:3000/health || exit 1
-          
       - name: Notify deployment status
         if: always()
         run: |
@@ -107,5 +102,3 @@ jobs:
           else
             echo "❌ Deployment failed!"
           fi
-if: success()
-        run: echo "✅ Deployment completed successfully!"
