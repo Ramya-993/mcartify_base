@@ -65,6 +65,11 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
+            # Load environment variables
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            export PATH="$PATH:/usr/local/bin:$HOME/.local/bin"
+            
             # Set variables
             DEPLOY_PATH="$HOME/mcartify-dev/server"
             BACKUP_PATH="$HOME/backups/mcartify-dev-$(date +%Y%m%d-%H%M%S)"
@@ -85,7 +90,7 @@ jobs:
             
             # Install dependencies (only production)
             echo "Installing production dependencies..."
-            npm ci --only=production
+            npm ci --only=production || npm install --production
             
             # Restart the application using PM2
             echo "Restarting application..."
