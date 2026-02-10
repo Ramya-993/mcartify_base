@@ -10,21 +10,21 @@ import CategoryCard from "../components/CategoryCard";
 import type { FeaturedCategoriesViewProps } from "../components/FeaturedCategories";
 
 const FeaturedCategoriesView: React.FC<FeaturedCategoriesViewProps> = ({
-    title,
+    title = "Step Up Your Game",
     displayedCategories,
-    gridCols,
+    gridCols = "sm:grid-cols-3",
 }) => {
     return (
         <section
-            className="py-(spacing:--section-padding-y) md:py-(spacing:--section-padding-y-lg) px-(spacing:--section-padding-x) md:px-(spacing:--section-padding-x-md) lg:px-(spacing:--section-padding-x-lg)"
+            className="py-8 md:py-12 px-4 md:px-8 lg:px-28"
             aria-labelledby="featured-categories-heading"
         >
             <div className="container mx-auto max-w-full">
                 {/* Section Header - Centered Title */}
-                <div className="mb-(spacing:--heading-margin) px-0 flex flex-col items-center justify-center">
+                <div className="mb-8 px-0 flex flex-col items-center justify-center">
                     <h2
                         id="featured-categories-heading"
-                        className="text-(size:--heading-size) md:text-(size:--heading-size-lg) font-(weight:--heading-weight) text-(color:--foreground) text-center"
+                        className="text-2xl md:text-3xl font-bold text-gray-900 text-center"
                     >
                         {title}
                     </h2>
@@ -53,16 +53,16 @@ const FeaturedCategoriesView: React.FC<FeaturedCategoriesViewProps> = ({
                 </div>
 
                 {/* Categories Grid for tablet/desktop */}
-                <div className={`hidden sm:grid gap-(spacing:--card-gap) ${gridCols}`}>
+                <div className={`hidden sm:grid gap-6 ${gridCols}`}>
                     {displayedCategories.map((category) => (
                         <CategoryCard key={category.categoryId} cardData={category} />
                     ))}
                 </div>
 
                 {/* View All Button at Bottom Center */}
-                <div className="flex justify-center mt-(spacing:--section-margin-top)">
+                <div className="flex justify-center mt-10">
                     <Link href="/categories" aria-label="View all product categories">
-                        <button className="px-(spacing:--button-padding-x) py-(spacing:--button-padding-y) border-(color:--border) text-(color:--primary) bg-(color:--background) rounded-(radius:--button-radius) font-(weight:--button-weight) text-(size:--button-size) hover:bg-(color:--button-hover-bg) transition-colors shadow-(--button-shadow)">
+                        <button className="px-8 py-2 border border-yellow-500 text-yellow-600 bg-white rounded-md font-medium text-base hover:bg-yellow-50 transition-colors shadow-sm">
                             View All
                         </button>
                     </Link>

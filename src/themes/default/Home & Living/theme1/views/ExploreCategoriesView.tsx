@@ -10,6 +10,7 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
     categories,
     error,
 }) => {
+    // Animation variants
     const containerVariants = useMemo(
         () => ({
             hidden: { opacity: 0 },
@@ -43,7 +44,7 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
     if (error) {
         return (
             <section
-                className="py-(spacing:--section-padding-y) bg-(color:--section-bg)"
+                className="py-(spacing:--section-padding-y) bg-(color:--primary)"
                 aria-labelledby="explore-categories-error-title"
             >
                 <div className="container mx-auto px-4">
@@ -51,9 +52,9 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
                         <CardHeader>
                             <CardTitle
                                 id="explore-categories-error-title"
-                                className="text-lg font-(weight:--card-title-weight) text-(color:--primary) md:text-2xl font-(family-name:--font-primary)"
+                                className="text-lg font-(weight:--heading-weight) text-(color:--primary) md:text-2xl font-(family-name:--font-primary)"
                             >
-                                Explore all Categories
+                                Explore all Categoriess
                             </CardTitle>
                         </CardHeader>
                         <CardContent>
@@ -69,7 +70,7 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
 
     return (
         <section
-            className="py-(spacing:--section-padding-y) bg-(color:--section-bg)"
+            className="py-(spacing:--section-padding-y) bg-(color:--primary)"
             aria-labelledby="explore-categories-title"
         >
             <div className="container mx-auto px-4">
@@ -83,7 +84,7 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
                             <CardHeader className="flex-row items-center justify-between space-y-0 px-4 pt-4">
                                 <CardTitle
                                     id="explore-categories-title"
-                                    className="text-lg font-(weight:--card-title-weight) text-(color:--primary) md:text-2xl font-(family-name:--font-primary)"
+                                    className="text-lg font-(weight:--heading-weight) text-(color:--primary) md:text-2xl font-(family-name:--font-primary)"
                                 >
                                     Explore all Categories
                                 </CardTitle>
