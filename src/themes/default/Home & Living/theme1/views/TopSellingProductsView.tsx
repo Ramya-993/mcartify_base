@@ -10,24 +10,24 @@ import { topSellingAnimationVariants } from "@/types/components";
 import type { TopSellingProductsViewProps } from "../components/TopSellingProducts";
 
 const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
-    title = "Discover the Best of Purple Shop",
+    title,
     loading,
     error,
-    layout = "carousel",
-    products = [],
-    showArrows = true,
-    showDots = true,
-    totalSlides = 1,
-    currentSlide = 0,
+    layout,
+    products,
+    showArrows,
+    showDots,
+    totalSlides,
+    currentSlide,
     onNext,
     onPrev,
     onGoToSlide,
 }) => {
     if (error) {
         return (
-            <section className="py-8 bg-(color:--primary)">
+            <section className="py-(spacing:--section-padding-y) bg-(color:--section-bg)">
                 <div className="container mx-auto px-4">
-                    <Card className="border-none shadow-(--top-selling-card-shadow) rounded-(--top-selling-card-radius) bg-(color:--background) p-8 text-center">
+                    <Card className="border-none shadow-(--top-selling-card-shadow) rounded-(--top-selling-card-radius) bg-(color:--top-selling-card-bg) p-8 text-center">
                         <CardTitle className="text-lg text-(color:--destructive) mb-2">
                             Error Loading Products
                         </CardTitle>
@@ -99,17 +99,15 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                                                     animate={{ opacity: 1, y: 0 }}
                                                                     transition={{ delay: index * 0.1 }}
                                                                     className="carousel-product-container"
-                                                                    style={
-                                                                        {
-                                                                            "--carousel-scale": "0.85",
-                                                                            "--carousel-height": "auto",
-                                                                            "--image-aspect": "3/4",
-                                                                            "--card-padding": "0.75rem",
-                                                                            "--title-size": "0.875rem",
-                                                                            "--price-size": "1rem",
-                                                                            "--content-spacing": "0.5rem",
-                                                                        } as React.CSSProperties
-                                                                    }
+                                                                    style={{
+                                                                        "--carousel-scale": "0.85",
+                                                                        "--carousel-height": "auto",
+                                                                        "--image-aspect": "3/4",
+                                                                        "--card-padding": "0.75rem",
+                                                                        "--title-size": "0.875rem",
+                                                                        "--price-size": "1rem",
+                                                                        "--content-spacing": "0.5rem",
+                                                                    } as React.CSSProperties}
                                                                 >
                                                                     <div className="transform scale-[0.85] origin-center">
                                                                         <Product product={product} />
@@ -177,7 +175,7 @@ const TopSellingProductsView: React.FC<TopSellingProductsViewProps> = ({
                                                         key={index}
                                                         onClick={() => onGoToSlide(index)}
                                                         className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === index
-                                                            ? "bg-(color:--primary) scale-125"
+                                                            ? "bg-primary scale-125"
                                                             : "bg-gray-300 hover:bg-gray-400"
                                                             }`}
                                                         aria-label={`Go to slide ${index + 1}`}
