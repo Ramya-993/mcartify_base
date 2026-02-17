@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
-import { WidthProvider, Responsive, Layouts, Layout } from "react-grid-layout";
+import { WidthProvider, Responsive } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import Image from "next/image";
@@ -8,11 +8,13 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import type { CustomSectionViewProps, CustomSectionImage } from "../components/CustomSection";
 
+const ResponsiveGridLayout = WidthProvider(Responsive);
+
 const CustomSectionView: React.FC<CustomSectionViewProps> = ({
-    title = "Welcome to the Purple Shop",
-    sub_title = "Discover a world of playful elegance",
+    title = "Curated Fashion Picks",
+    sub_title = "Handpicked Styles Just for You",
     images,
-    layouts,
+    layouts = { lg: [{ i: "0", x: 0, y: 0, w: 2, h: 2 }] }, // Example layout
 }) => {
     const gridRef = useRef<HTMLDivElement>(null);
     const [rowHeight, setRowHeight] = useState(60);
@@ -23,7 +25,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
             if (gridRef.current) {
                 const containerWidth = gridRef.current.offsetWidth;
                 const newRowHeight = (containerWidth / 12) * 0.5;
-                setRowHeight(Math.max(newRowHeight, 40)); // Minimum row height
+                setRowHeight(Math.max(newRowHeight, 40));
             }
         };
 
@@ -42,10 +44,23 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
 
         if (hasError) {
             return (
-                <div className="w-full h-full flex items-center justify-center bg-gray-200">
+                <div
+                    className="w-full h-full flex items-center justify-center"
+                    style={{ backgroundColor: "var(--background)" }}
+                >
                     <div className="text-center">
-                        <div className="text-gray-400 text-4xl mb-2">📷</div>
-                        <p className="text-gray-500 text-xs">Image not available</p>
+                        <div
+                            className="mb-2"
+                            style={{
+                                color: "var(--foreground)",
+                                fontSize: "var(--section-padding-y)",
+                            }}
+                        >
+                            📷
+                        </div>
+                        <p style={{ color: "var(--foreground)", fontSize: "0.75rem" }}>
+                            Image not available
+                        </p>
                     </div>
                 </div>
             );
@@ -59,7 +74,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                     fill
                     style={{
                         objectFit: "cover",
-                        borderRadius: 8,
+                        borderRadius: "var(--section-padding-y)",
                         width: "100%",
                         height: "100%",
                     }}
@@ -69,8 +84,14 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                 />
                 {image.text && (
                     <Button
-                        className="absolute left-1/2 -translate-x-1/2 bottom-6 bg-white text-neutral-900 font-medium px-8 py-3 rounded-none shadow-none text-base"
-                        style={{ borderRadius: 0 }}
+                        className="absolute left-1/2 -translate-x-1/2 bottom-6 rounded-none shadow-none text-base"
+                        style={{
+                            backgroundColor: "var(--primary)",
+                            color: "var(--primary-foreground)",
+                            fontWeight: "var(--section-padding-y)",
+                            padding: `var(--section-padding-y) var(--section-padding-y)`,
+                            borderRadius: 0,
+                        }}
                     >
                         {image.text}
                     </Button>
@@ -80,16 +101,36 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
     };
 
     return (
-        <section className="w-full px-4 md:px-6 lg:px-8">
+        <section
+            className="w-full"
+            style={{
+                paddingLeft: "var(--section-padding-y)",
+                paddingRight: "var(--section-padding-y)",
+            }}
+        >
             {(title || sub_title) && (
                 <div className="mb-6 text-center">
                     {title && (
-                        <h2 className="text-2xl md:text-3xl font-bold mb-2 text-gray-900">
+                        <h2
+                            style={{
+                                color: "var(--primary)",
+                                fontSize: "var(--section-padding-y)",
+                                fontWeight: "var(--section-padding-y)",
+                                marginBottom: "var(--section-padding-y)",
+                            }}
+                        >
                             {title}
                         </h2>
                     )}
                     {sub_title && (
-                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                        <p
+                            className="mx-auto"
+                            style={{
+                                color: "var(--secondary)",
+                                fontSize: "var(--section-padding-y)",
+                                maxWidth: "var(--section-padding-y)",
+                            }}
+                        >
                             {sub_title}
                         </p>
                     )}
@@ -118,7 +159,7 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                             <div
                                 key={img.id}
                                 data-grid={img.layout}
-                                className="group relative overflow-hidden rounded-lg border border-gray-200 bg-gray-50 transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+                                className="group relative overflow-hidden"
                                 style={{
                                     width: "100%",
                                     height: "100%",
@@ -126,6 +167,10 @@ const CustomSectionView: React.FC<CustomSectionViewProps> = ({
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
+                                    borderRadius: "var(--section-padding-y)",
+                                    border: `1px solid var(--foreground)`,
+                                    backgroundColor: "var(--background)",
+                                    transition: "var(--section-padding-y)",
                                 }}
                             >
                                 {imageContent}
