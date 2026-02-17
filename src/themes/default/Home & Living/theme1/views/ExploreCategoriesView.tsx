@@ -10,6 +10,7 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
     categories,
     error,
 }) => {
+    // Animation variants
     const containerVariants = useMemo(
         () => ({
             hidden: { opacity: 0 },
@@ -43,7 +44,7 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
     if (error) {
         return (
             <section
-                className="py-(spacing:--section-padding-y) bg-(color:--primary)"
+                className="py-(spacing:--section-padding-y) bg-(color:--section-bg)"
                 aria-labelledby="explore-categories-error-title"
             >
                 <div className="container mx-auto px-4">
@@ -53,12 +54,12 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
                                 id="explore-categories-error-title"
                                 className="text-lg font-(weight:--card-title-weight) text-(color:--primary) md:text-2xl font-(family-name:--font-primary)"
                             >
-                                Explore Our Categories
+                                Explore Our Fashion Collections
                             </CardTitle>
                         </CardHeader>
                         <CardContent>
                             <p className="text-(color:--destructive) font-(family-name:--font-primary)">
-                                Oops! We couldn't load the categories. Please try again later.
+                                Error loading categories. Please try again later.
                             </p>
                         </CardContent>
                     </Card>
@@ -69,7 +70,7 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
 
     return (
         <section
-            className="py-(spacing:--section-padding-y) bg-(color:--primary)"
+            className="py-(spacing:--section-padding-y) bg-(color:--section-bg)"
             aria-labelledby="explore-categories-title"
         >
             <div className="container mx-auto px-4">
@@ -80,17 +81,17 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
                 >
                     <motion.div variants={cardVariants}>
                         <Card className="border-0 bg-(color:--background)/50 shadow-none rounded-(--card-radius)">
-                            <CardHeader>
+                            <CardHeader className="flex-row items-center justify-between space-y-0 px-4 pt-4">
                                 <CardTitle
                                     id="explore-categories-title"
                                     className="text-lg font-(weight:--card-title-weight) text-(color:--primary) md:text-2xl font-(family-name:--font-primary)"
                                 >
-                                    Explore Our Categories
+                                    Explore Our Fashion Collections
                                 </CardTitle>
                             </CardHeader>
 
                             <CardContent className="px-4 pt-2">
-                                <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+                                <div className={`grid ${"grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"}`}>
                                     {categories.length === 0 ? (
                                         <div
                                             className="col-span-full flex flex-col items-center justify-center rounded-lg border border-dashed border-(color:--primary)/20 bg-(color:--primary)/5 p-8 text-center"
@@ -98,7 +99,7 @@ const ExploreCategoriesView: React.FC<ExploreCategoriesViewProps> = ({
                                             aria-live="polite"
                                         >
                                             <p className="mt-4 text-sm text-(color:--muted-foreground) font-(family-name:--font-primary)">
-                                                No categories found. Check back later!
+                                                No categories found
                                             </p>
                                         </div>
                                     ) : (
